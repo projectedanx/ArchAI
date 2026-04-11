@@ -18,6 +18,8 @@ The system is built upon the following theoretical frameworks:
 *   **Dynamic Recursive Loops:** Implements a "Rebuttal Phase" where agents refine their stance based on peer feedback (Synthesis & Rebuttal).
 *   **Deep Thinking Integration:** Leverages `gemini-3-pro-preview` for complex reasoning tasks (`thinkingBudget: 32768`).
 *   **Semantic Drift Visualization:** Tracks the impact of architectural decisions over time via the Drift Timeline.
+*   **Epistemic Escrow Sandbox (Upcoming):** Isolates unresolved cognitive friction for asynchronous human insight mining.
+*   **Dynamic Contextual Confidence Guardrails (Upcoming):** Modifies data schema rigidness based on agent confidence topology (DCCD).
 *   **Audit Trail:** Immutable logging of all agent actions and system state changes.
 
 ## 🛠️ Tech Stack
