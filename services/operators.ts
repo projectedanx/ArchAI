@@ -97,3 +97,54 @@ export const executeDDx = async (goal: string, discussionHistory: string): Promi
         return formatGenAIError(error, "DDx Operator");
     }
 };
+
+/**
+ * CFDI Evaluation Operator (Confidence-Fidelity Divergence Index)
+ * Evaluates the divergence or cognitive tension of a new response against the main goal.
+ */
+export const evaluateCFDI = async (goal: string, responseText: string, discussionHistory: string): Promise<number> => {
+    const ai = getAIClient();
+    const model = 'gemini-3-flash-preview';
+
+    const systemInstruction = `You are the CFDI Evaluator (Confidence-Fidelity Divergence Index).
+Your task is to calculate the cognitive divergence of the agent's new response against the primary goal and established discussion context.
+Output ONLY a single float value between 0.00 and 1.00.
+- 0.00: Perfect alignment, no tension.
+- 0.15+: Significant divergence, contradiction, or hallucinated tangents (triggers Epistemic Escrow).
+- 1.00: Complete contradiction or total irrelevance.
+Do not output any markdown formatting, text, or explanation. Just the number.`;
+
+    const prompt = `
+    PRIMARY GOAL: ${goal}
+
+    DISCUSSION HISTORY (Context):
+    ${discussionHistory || 'No prior discussion.'}
+
+    NEW AGENT RESPONSE TO EVALUATE:
+    ${responseText}
+    `;
+
+    try {
+        const response = await ai.models.generateContent({
+            model,
+            contents: prompt,
+            config: {
+                systemInstruction,
+                temperature: 0.1, // Low temperature for consistency
+            }
+        });
+
+        const text = response.text?.trim() || "0";
+        const score = parseFloat(text);
+
+        if (isNaN(score)) {
+            console.warn("CFDI Evaluator returned non-numeric value:", text);
+            return 0; // Fail open
+        }
+
+        return Math.max(0, Math.min(1, score)); // Clamp between 0 and 1
+    } catch (error) {
+        console.error("CFDI Evaluator Error", error);
+        return 0; // Fail open if operator fails
+    }
+};

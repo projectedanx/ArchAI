@@ -1,7 +1,7 @@
 import React from 'react';
 import { AgentRole, WorkflowState } from '../types';
 import { PERSONAS } from '../constants';
-import { Settings, Play, Shield, Zap, Palette, Map, Brain, Globe, Anchor, Flame } from 'lucide-react';
+import { Settings, Play, Shield, Zap, Palette, Map, Brain, Globe, Anchor, Flame, Archive } from 'lucide-react';
 
 interface ConfigPanelProps {
   state: WorkflowState;
@@ -109,6 +109,21 @@ const ConfigPanel: React.FC<ConfigPanelProps> = ({ state, onUpdate, onStart }) =
             />
             <span className="text-sm font-medium text-slate-300 flex items-center gap-1.5">
                 <Globe className="w-4 h-4" /> Web Search
+            </span>
+          </label>
+
+          <label className="flex items-center gap-2 cursor-pointer group">
+             <div className={`w-10 h-6 rounded-full p-1 transition-colors ${state.escrowEnabled ? 'bg-blue-600' : 'bg-slate-700'}`}>
+                <div className={`w-4 h-4 bg-white rounded-full shadow-md transform transition-transform ${state.escrowEnabled ? 'translate-x-4' : 'translate-x-0'}`} />
+            </div>
+            <input
+                type="checkbox"
+                className="hidden"
+                checked={state.escrowEnabled}
+                onChange={(e) => onUpdate({ escrowEnabled: e.target.checked })}
+            />
+            <span className="text-sm font-medium text-slate-300 flex items-center gap-1.5">
+                <Archive className="w-4 h-4" /> Epistemic Escrow
             </span>
           </label>
 
