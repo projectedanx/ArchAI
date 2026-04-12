@@ -1,8 +1,8 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
-import { WorkflowState, AgentRole, AuditEvent, AgentMessage, DriftEntry, DiffMetric, DecisionRecord } from './types';
+import { WorkflowState, AgentRole, AuditEvent, AgentMessage, DriftEntry, DiffMetric, DecisionRecord, EscrowEntry } from './types';
 import { PERSONAS, INITIAL_GOAL } from './constants';
 import { generateAgentTurn, generateConsensusPlan } from './services/geminiService';
-import { executeStareDecisis, executeDDx } from './services/operators';
+import { executeStareDecisis, executeDDx, evaluateCFDI } from './services/operators';
 import ConfigPanel from './components/ConfigPanel';
 import AgentOrchestrator from './components/AgentOrchestrator';
 import PlanViewer from './components/PlanViewer';
@@ -66,6 +66,8 @@ const INITIAL_STATE: WorkflowState = {
   deepThinkingEnabled: false,
   webSearchEnabled: false,
   ddxEnabled: false,
+  escrowEnabled: false,
+  escrowStore: [],
   messages: [],
   finalPlan: null,
   diffMetrics: [],
@@ -85,7 +87,7 @@ function App() {
                 // Reset processing state to avoid stuck UI on reload
                 // Ensure diffMetrics exists if loading legacy state
                 // Merge with INITIAL_STATE to ensure new fields (like Sovereign config, decisionLog) are present
-                return { ...INITIAL_STATE, ...parsed, isProcessing: false, decisionLog: DECISION_LOG };
+                return { ...INITIAL_STATE, ...parsed, isProcessing: false, decisionLog: DECISION_LOG, escrowStore: parsed.escrowStore || INITIAL_STATE.escrowStore, escrowEnabled: parsed.escrowEnabled ?? INITIAL_STATE.escrowEnabled };
             } catch (e) {
                 console.error('Failed to parse workflow state:', e);
             }
@@ -207,6 +209,32 @@ function App() {
 
         const response = await generateAgentTurn(role, state, currentHistory, isRebuttal);
         
+        let cfdiScore = 0;
+        if (state.escrowEnabled) {
+            cfdiScore = await evaluateCFDI(state.goal, response, currentHistory);
+        }
+
+        if (state.escrowEnabled && cfdiScore > 0.15) {
+            const escrowEntry: EscrowEntry = {
+                id: crypto.randomUUID(),
+                timestamp: new Date().toISOString(),
+                role,
+                personaName,
+                content: response,
+                cfdiScore,
+                status: 'Quarantined'
+            };
+
+            setState(prev => ({
+                ...prev,
+                escrowStore: [...prev.escrowStore, escrowEntry]
+            }));
+
+            addAuditLog('Escrow Sequestration', `${role} response quarantined (CFDI: ${cfdiScore.toFixed(2)})`, 'System');
+            continue; // Skip adding to messages and currentHistory
+        }
+
+
         const newMessage: AgentMessage = {
           id: crypto.randomUUID(),
           role,

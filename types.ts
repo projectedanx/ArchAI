@@ -29,6 +29,17 @@ export interface DriftEntry {
   affectedModules: string[];
 }
 
+
+export interface EscrowEntry {
+  id: string;
+  timestamp: string;
+  role: AgentRole;
+  personaName: string;
+  content: string;
+  cfdiScore: number;
+  status: 'Quarantined';
+}
+
 export interface DiffMetric {
   name: string;
   before: number;
@@ -50,6 +61,8 @@ export interface WorkflowState {
   deepThinkingEnabled: boolean;
   webSearchEnabled: boolean;
   ddxEnabled: boolean; // Controls DDx Protocol
+  escrowEnabled: boolean;
+  escrowStore: EscrowEntry[];
   messages: AgentMessage[];
   finalPlan: string | null;
   diffMetrics: DiffMetric[]; 

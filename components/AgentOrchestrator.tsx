@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { AgentMessage, WorkflowState, AgentRole } from '../types';
-import { Bot, Map, Shield, Zap, Palette, Loader2, Anchor } from 'lucide-react';
+import { Bot, Map, Shield, Zap, Palette, Loader2, Anchor, Archive } from 'lucide-react';
 
 interface AgentOrchestratorProps {
   state: WorkflowState;
@@ -84,6 +84,47 @@ const AgentOrchestrator: React.FC<AgentOrchestratorProps> = ({ state }) => {
           </div>
         ))}
         
+
+        {state.escrowStore?.length > 0 && (
+          <div className="mt-8 border-t border-dashed border-slate-700 pt-6">
+            <h4 className="text-sm font-semibold text-amber-500 flex items-center gap-2 mb-4 px-2">
+              <Archive className="w-4 h-4" />
+              Epistemic Escrow (Quarantined Tension Nodes)
+            </h4>
+            <div className="space-y-4">
+              {state.escrowStore.map((entry) => (
+                <div key={entry.id} className="flex flex-col gap-2">
+                  <div className="flex items-center gap-2 px-2">
+                     <div className={`p-1.5 rounded-lg border ${getAgentColor(entry.role)}`}>
+                       {getAgentIcon(entry.role)}
+                     </div>
+                     <div className="flex flex-col">
+                        <span className={`text-sm font-bold ${getAgentColor(entry.role).split(' ')[0]}`}>
+                          {entry.role} Agent
+                        </span>
+                        <span className="text-xs text-slate-500">
+                          {entry.personaName}
+                        </span>
+                     </div>
+                     <div className="ml-auto flex items-center gap-2">
+                       <span className="text-xs font-mono text-amber-400 bg-amber-950/30 px-2 py-0.5 rounded border border-amber-500/20">
+                         CFDI: {entry.cfdiScore.toFixed(2)}
+                       </span>
+                       <span className="text-xs text-slate-600 font-mono">
+                         {new Date(entry.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                       </span>
+                     </div>
+                  </div>
+
+                  <div className="ml-10 p-4 rounded-lg rounded-tl-none border bg-amber-950/10 border-amber-900/50 text-slate-300 text-sm leading-relaxed shadow-sm opacity-80">
+                     {entry.content}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {state.isProcessing && (
           <div className="flex gap-2 items-center ml-10 text-slate-500 text-sm animate-pulse">
             <span className="w-2 h-2 rounded-full bg-slate-600" />
