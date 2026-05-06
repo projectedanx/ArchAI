@@ -46,6 +46,15 @@ export interface DiffMetric {
   after: number;
 }
 
+
+export interface ScarRatchet {
+  id: string;
+  sourceEscrowId: string;
+  timestamp: string;
+  constraint: string;
+  description: string;
+}
+
 export interface DecisionRecord {
   id: string;
   timestamp: string;
@@ -55,7 +64,7 @@ export interface DecisionRecord {
 }
 
 export interface WorkflowState {
-  step: 'config' | 'orchestration' | 'consensus' | 'audit';
+  step: 'config' | 'orchestration' | 'consensus' | 'audit' | 'escrow';
   goal: string;
   agentConfigs: Record<AgentRole, string>; // Role -> PersonaID
   deepThinkingEnabled: boolean;
@@ -63,6 +72,7 @@ export interface WorkflowState {
   ddxEnabled: boolean; // Controls DDx Protocol
   escrowEnabled: boolean;
   escrowStore: EscrowEntry[];
+  scarRegistry: ScarRatchet[];
   messages: AgentMessage[];
   finalPlan: string | null;
   diffMetrics: DiffMetric[]; 
