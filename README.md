@@ -20,7 +20,7 @@ The system is built upon the following theoretical frameworks:
 *   **Semantic Drift Visualization:** Tracks the impact of architectural decisions over time via the Drift Timeline.
 *   **Epistemic Escrow Sandbox:** Isolates unresolved cognitive friction (CFDI > 0.15) for asynchronous human insight mining.
 *   **Symbolic Scar Ratcheting:** Converts Escrow conflicts into generative constraints using the Stare Decisis Operator.
-*   **Dynamic Contextual Confidence Guardrails (Upcoming):** Modifies data schema rigidness based on agent confidence topology (DCCD).
+*   **Dynamic Contextual Confidence Guardrails (DCCD):** Modifies data schema rigidness based on agent confidence topology. Strict schemas applied at >0.85 confidence; twinned schema branching applied at <=0.85.
 *   **Audit Trail:** Immutable logging of all agent actions and system state changes.
 
 ## 🛠️ Tech Stack
