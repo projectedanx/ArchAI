@@ -68,6 +68,7 @@ const INITIAL_STATE: WorkflowState = {
   ddxEnabled: false,
   escrowEnabled: false,
   escrowStore: [],
+    scarRegistry: [],
   messages: [],
   finalPlan: null,
   diffMetrics: [],
@@ -154,7 +155,7 @@ function App() {
     try {
       // 1. Stare Decisis Check (Pre-Flight)
       addAuditLog('Operator Active', 'Stare Decisis checking precedents...', 'System');
-      const precedenceCheck = await executeStareDecisis(state.goal, state.decisionLog);
+      const precedenceCheck = await executeStareDecisis(state.goal, state.decisionLog, state.scarRegistry);
       
       if (precedenceCheck.includes('NO_CONFLICT')) {
           addAuditLog('Operator Passed', 'No architectural conflicts found', 'System');
@@ -365,6 +366,7 @@ function App() {
             <NavItem step="config" icon={LayoutGrid} label="Configuration" />
             <NavItem step="orchestration" icon={Bot} label="Agent Workflow" />
             <NavItem step="consensus" icon={ListEnd} label="Consensus Plan" />
+            <NavItem step="escrow" icon={ShieldAlert} label="Epistemic Escrow" />
         </nav>
 
         <div className="mt-auto pt-4 border-t border-slate-800">
@@ -394,6 +396,10 @@ function App() {
 
           {state.step === 'consensus' && (
             <PlanViewer state={state} />
+          )}
+
+          {state.step === 'escrow' && (
+            <EscrowPanel state={state} onElevate={handleElevateToScar} />
           )}
         </div>
       </main>
@@ -427,6 +433,60 @@ function Bot({ className }: { className?: string }) {
             <path d="M9 13v2" />
         </svg>
     )
+}
+
+
+function EscrowPanel({ state, onElevate }: { state: WorkflowState, onElevate: (entry: EscrowEntry) => void }) {
+  if (state.escrowStore.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center h-full text-slate-500">
+        <ShieldAlert className="w-16 h-16 mb-4 opacity-50" />
+        <h2 className="text-xl font-medium">Escrow Empty</h2>
+        <p className="mt-2 text-sm text-slate-400">No cognitive contradictions quarantined.</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="h-full flex flex-col">
+      <div className="mb-6">
+        <h2 className="text-2xl font-bold flex items-center gap-2">
+          <ShieldAlert className="w-6 h-6 text-amber-500" />
+          Epistemic Escrow
+        </h2>
+        <p className="text-slate-400 mt-1 text-sm">Review quarantined cognitive contradictions and elevate them to Symbolic Scar Ratchets.</p>
+      </div>
+
+      <div className="flex-1 overflow-y-auto space-y-4 pr-2">
+        {state.escrowStore.map((entry) => (
+          <div key={entry.id} className="bg-slate-900 border border-amber-900/50 rounded-xl p-5 shadow-lg">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-3">
+                <div className="px-3 py-1 bg-slate-800 rounded-full text-xs font-mono text-amber-400 border border-amber-900/30">
+                  CFDI: {entry.cfdiScore.toFixed(2)}
+                </div>
+                <h3 className="font-medium text-slate-200">{entry.role} ({entry.personaName})</h3>
+              </div>
+              <div className="text-xs text-slate-500">{new Date(entry.timestamp).toLocaleTimeString()}</div>
+            </div>
+
+            <div className="bg-slate-950 p-4 rounded-lg text-sm text-slate-300 font-mono whitespace-pre-wrap mb-4 border border-slate-800/50 max-h-64 overflow-y-auto">
+              {entry.content}
+            </div>
+
+            <div className="flex justify-end">
+              <button
+                onClick={() => onElevate(entry)}
+                className="px-4 py-2 bg-amber-600/20 hover:bg-amber-600/40 text-amber-500 rounded-lg text-sm font-medium transition-colors border border-amber-600/30"
+              >
+                Elevate to Scar Ratchet
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default App;

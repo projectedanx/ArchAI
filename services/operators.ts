@@ -1,6 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 import { PROMPTS } from "../prompts";
-import { DecisionRecord } from "../types";
+import { DecisionRecord, ScarRatchet } from "../types";
 
 // Helper to get the API client
 const getAIClient = () => {
@@ -36,7 +36,7 @@ const formatGenAIError = (error: any, context: string): string => {
  * Stare Decisis Operator (Consistency Engine)
  * Checks the current goal against a log of Architectural Decision Records (ADRs).
  */
-export const executeStareDecisis = async (goal: string, decisionLog: DecisionRecord[]): Promise<string> => {
+export const executeStareDecisis = async (goal: string, decisionLog: DecisionRecord[], scarRegistry: ScarRatchet[] = []): Promise<string> => {
     const ai = getAIClient();
     // Use fast model for check
     const model = 'gemini-3-flash-preview'; 
@@ -45,11 +45,18 @@ export const executeStareDecisis = async (goal: string, decisionLog: DecisionRec
         `[${d.id}] (${d.status}): ${d.title} (Tags: ${d.tags.join(', ')})`
     ).join('\n');
 
+    const scarContext = scarRegistry.map(s =>
+        `[SCAR-${s.id.substring(0, 8)}] ${s.constraint}: ${s.description}`
+    ).join('\n');
+
     const prompt = `
     GOAL: ${goal}
 
     DECISION LOG (Architectural Precedents):
     ${decisionContext}
+
+    ACTIVE SCAR RATCHETS (Hard Constraints - DO NOT VIOLATE):
+    ${scarContext || 'None'}
     `;
 
     try {
