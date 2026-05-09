@@ -1,15 +1,34 @@
+
 import React from 'react';
 import { AgentRole, WorkflowState } from '../types';
 import { PERSONAS } from '../constants';
 import { Settings, Play, Shield, Zap, Palette, Map, Brain, Globe, Anchor, Flame, Archive } from 'lucide-react';
 
+/**
+ * Props for the ConfigPanel component.
+ * @property {WorkflowState} state - The current workflow state containing agent configurations and toggles.
+ * @property {function} onUpdate - Callback function to update partial properties of the workflow state.
+ * @property {function} onStart - Callback function to initiate the agent orchestration workflow.
+ */
 interface ConfigPanelProps {
   state: WorkflowState;
   onUpdate: (updates: Partial<WorkflowState>) => void;
   onStart: () => void;
 }
 
+/**
+ * Renders the configuration interface allowing users to set the architectural goal.
+ *
+ * @param {ConfigPanelProps} props - The component props.
+ * @returns {JSX.Element} The rendered ConfigPanel component.
+ */
 const ConfigPanel: React.FC<ConfigPanelProps> = ({ state, onUpdate, onStart }) => {
+  /**
+   * Handles the selection change for an agent's persona.
+   *
+   * @param {AgentRole} role - The role being configured.
+   * @param {string} personaId - The ID of the newly selected persona.
+   */
   const handlePersonaChange = (role: AgentRole, id: string) => {
     onUpdate({
       agentConfigs: {
