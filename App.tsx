@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { WorkflowState, AgentRole, AuditEvent, AgentMessage, DriftEntry, DiffMetric, DecisionRecord, EscrowEntry } from './types';
 import { PERSONAS, INITIAL_GOAL } from './constants';
@@ -53,6 +54,9 @@ const DECISION_LOG: DecisionRecord[] = [
 ];
 
 // Initial state
+/**
+ * The initial immutable baseline state for the application workflow.
+ */
 const INITIAL_STATE: WorkflowState = {
   step: 'config',
   goal: INITIAL_GOAL,
@@ -77,6 +81,12 @@ const INITIAL_STATE: WorkflowState = {
   decisionLog: DECISION_LOG,
 };
 
+/**
+ * The root application component managing state, orchestrating agent workflows,
+ * and rendering the primary layout structure.
+ *
+ * @returns {JSX.Element} The rendered React Application.
+ */
 function App() {
   // Initialize state from localStorage or defaults
   const [state, setState] = useState<WorkflowState>(() => {
@@ -125,6 +135,13 @@ function App() {
   // Ref to prevent double-firing in strict mode or race conditions
   const processingRef = useRef(false);
 
+  /**
+   * Helper function to append an event to the system audit log.
+   *
+   * @param {string} action - Brief description of the action.
+   * @param {string} details - Detailed context surrounding the action.
+   * @param {AuditEvent['actor']} actor - The entity performing the action.
+   */
   const addAuditLog = (action: string, details: string, actor: AuditEvent['actor']) => {
     const event: AuditEvent = {
       id: crypto.randomUUID(),
@@ -136,10 +153,19 @@ function App() {
     setAuditLog((prev) => [event, ...prev]);
   };
 
+  /**
+   * Updates partial properties of the main workflow state.
+   *
+   * @param {Partial<WorkflowState>} updates - An object containing state keys and new values to merge.
+   */
   const updateState = (updates: Partial<WorkflowState>) => {
     setState((prev) => ({ ...prev, ...updates }));
   };
 
+  /**
+   * Initiates and manages the entire multi-agent orchestration sequence,
+   * handling conversation turns, system checks, DDx analysis, and plan synthesis.
+   */
   const handleStartWorkflow = () => {
     addAuditLog('Workflow Initiated', 'Refactoring consensus started', 'User');
     updateState({ step: 'orchestration', isProcessing: true });
@@ -148,6 +174,9 @@ function App() {
     runAgentLoop();
   };
 
+  /**
+   * Runs the main loop of agent interactions.
+   */
   const runAgentLoop = async () => {
     if (processingRef.current) return;
     processingRef.current = true;
@@ -334,6 +363,12 @@ function App() {
   };
 
   // Nav helper
+  /**
+   * Sub-component rendering a specific navigation item in the sidebar.
+   *
+   * @param {Object} props - The component props.
+   * @returns {JSX.Element} The rendered navigation button.
+   */
   const NavItem = ({ step, icon: Icon, label }: { step: WorkflowState['step'], icon: any, label: string }) => (
     <button 
         onClick={() => state.isProcessing ? null : updateState({ step })}
@@ -411,6 +446,12 @@ function App() {
 }
 
 // Bot Icon component for Nav
+/**
+ * A functional SVG icon representing a robot, used for navigation items.
+ *
+ * @param {Object} props - Component props.
+ * @returns {JSX.Element} The rendered SVG icon.
+ */
 function Bot({ className }: { className?: string }) {
     return (
         <svg
@@ -436,6 +477,13 @@ function Bot({ className }: { className?: string }) {
 }
 
 
+/**
+ * Renders the interface for reviewing and elevating quarantined constraints
+ * within the Epistemic Escrow view.
+ *
+ * @param {Object} props - Component props.
+ * @returns {JSX.Element} The rendered EscrowPanel sub-component.
+ */
 function EscrowPanel({ state, onElevate }: { state: WorkflowState, onElevate: (entry: EscrowEntry) => void }) {
   if (state.escrowStore.length === 0) {
     return (

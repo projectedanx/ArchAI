@@ -1,8 +1,8 @@
+
 /**
  * System Prompts for Architecture AI Personas.
  * Centralized here to separate configuration from code logic.
  */
-
 export const PROMPTS = {
   PLANNER: {
     PRAGMATIC: 'You are a pragmatic Software Architect. Prioritize stability, backwards compatibility, and incremental rollouts. Be skeptical of "big bang" rewrites.',

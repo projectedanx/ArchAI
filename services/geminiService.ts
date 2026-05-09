@@ -1,3 +1,4 @@
+
 import { GoogleGenAI, Type } from "@google/genai";
 import { AgentConfig, AgentRole, WorkflowState, DecisionRecord } from "../types";
 import { PERSONAS } from "../constants";
@@ -34,6 +35,14 @@ const formatGenAIError = (error: any, context: string): string => {
 };
 
 // Map configuration to model name and settings
+/**
+ * Determines the appropriate model name and configuration payload based on workflow settings.
+ *
+ * @param {boolean} useThinking - Whether the model should be used with a thinking budget.
+ * @param {boolean} useWebSearch - Whether the web search tool should be injected.
+ * @param {boolean} isComplex - A flag suggesting if the operation implies complexity.
+ * @returns {Object} An object containing the `model` name string, a `config` object, and a `tools` array.
+ */
 const getModelConfig = (useDeepThinking: boolean, useWebSearch: boolean, isComplex: boolean = false) => {
   // Config Rule 1: Deep Thinking -> gemini-3-pro-preview + thinkingBudget: 32768
   if (useDeepThinking) {
@@ -66,6 +75,15 @@ const getModelConfig = (useDeepThinking: boolean, useWebSearch: boolean, isCompl
   };
 };
 
+/**
+ * Generates an agent's response turn utilizing the specified persona, constraints, and chat history.
+ *
+ * @param {AgentRole} role - The role of the agent responding.
+ * @param {WorkflowState} state - The current state of the application orchestration workflow.
+ * @param {string} previousMessages - A string compilation of prior discussion context.
+ * @param {boolean} [isRebuttal=false] - Optional flag indicating if this is a recursive rebuttal phase.
+ * @returns {Promise<string>} A promise resolving to the agent's textual response.
+ */
 export const generateAgentTurn = async (
   role: AgentRole,
   state: WorkflowState,
@@ -141,6 +159,12 @@ export const generateAgentTurn = async (
   }
 };
 
+/**
+ * Synthesizes all gathered agent dialogue into a final, structured architectural plan.
+ *
+ * @param {WorkflowState} state - The current application workflow state.
+ * @returns {Promise<string>} A promise resolving to a markdown-formatted plan containing embedded JSON metrics.
+ */
 export const generateConsensusPlan = async (state: WorkflowState): Promise<string> => {
   // Check for the specific demo goal to return the pre-canned high-quality plan
   if (state.goal.toLowerCase().includes('context rot') || state.goal.toLowerCase().includes('filesystem')) {

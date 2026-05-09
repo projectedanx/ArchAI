@@ -1,6 +1,11 @@
+
 import { Persona, AgentRole } from './types';
 import { PROMPTS } from './prompts';
 
+/**
+ * Predefined dictionary of personas categorized by agent role.
+ * Maps each `AgentRole` to an array of available `Persona` objects.
+ */
 export const PERSONAS: Record<AgentRole, Persona[]> = {
   Planner: [
     {
@@ -74,4 +79,7 @@ export const PERSONAS: Record<AgentRole, Persona[]> = {
   ]
 };
 
+/**
+ * The default architectural goal presented to the user upon initialization.
+ */
 export const INITIAL_GOAL = "Prevent 'Context Rot' and security risks by enforcing filesystem constraints on agent access to node_modules and .git.";

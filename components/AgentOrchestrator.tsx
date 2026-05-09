@@ -1,11 +1,22 @@
+
 import React, { useEffect, useRef } from 'react';
 import { AgentMessage, WorkflowState, AgentRole } from '../types';
 import { Bot, Map, Shield, Zap, Palette, Loader2, Anchor, Archive } from 'lucide-react';
 
+/**
+ * Props for the AgentOrchestrator component.
+ * @property {WorkflowState} state - The current workflow state containing the conversation history and configuration.
+ */
 interface AgentOrchestratorProps {
   state: WorkflowState;
 }
 
+/**
+ * Visualizes the ongoing conversation and debate between various architectural AI agents.
+ *
+ * @param {AgentOrchestratorProps} props - The component props.
+ * @returns {JSX.Element} The rendered AgentOrchestrator interface.
+ */
 const AgentOrchestrator: React.FC<AgentOrchestratorProps> = ({ state }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -15,6 +26,12 @@ const AgentOrchestrator: React.FC<AgentOrchestratorProps> = ({ state }) => {
     }
   }, [state.messages]);
 
+  /**
+   * Returns Tailwind CSS classes defining the color theme for a specific agent role.
+   *
+   * @param {AgentRole} role - The role of the agent.
+   * @returns {string} The CSS classes for styling.
+   */
   const getAgentColor = (role: AgentRole) => {
     switch (role) {
       case 'Planner': return 'text-blue-400 border-blue-400/30 bg-blue-950/20';
@@ -26,6 +43,12 @@ const AgentOrchestrator: React.FC<AgentOrchestratorProps> = ({ state }) => {
     }
   };
 
+  /**
+   * Returns a specific React icon component representing the visual identity of an agent role.
+   *
+   * @param {AgentRole} role - The role of the agent.
+   * @returns {JSX.Element} The rendered icon element.
+   */
   const getAgentIcon = (role: AgentRole) => {
     switch (role) {
       case 'Planner': return <Map className="w-5 h-5" />;

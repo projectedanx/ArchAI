@@ -1,18 +1,32 @@
+
 import React from 'react';
 import { WorkflowState, DiffMetric, DriftEntry } from '../types';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { FileText, GitCompare, CheckCircle2, AlertTriangle, History, Activity, Download } from 'lucide-react';
 
+/**
+ * Props for the PlanViewer component.
+ * @property {WorkflowState} state - The current workflow state containing the final plan, metrics, and drift timeline.
+ */
 interface PlanViewerProps {
   state: WorkflowState;
 }
 
+/**
+ * Displays the final synthesized architectural consensus plan.
+ *
+ * @param {PlanViewerProps} props - The component props.
+ * @returns {JSX.Element} The rendered PlanViewer component.
+ */
 const PlanViewer: React.FC<PlanViewerProps> = ({ state }) => {
   // Use real metrics from state, fall back to empty array if none
   const diffMetrics: DiffMetric[] = state.diffMetrics || [];
   
   const hasMetrics = diffMetrics.length > 0;
 
+  /**
+   * Generates and downloads a markdown file containing the final architectural plan.
+   */
   const handleExport = () => {
     if (!state.finalPlan) return;
     
@@ -27,6 +41,11 @@ const PlanViewer: React.FC<PlanViewerProps> = ({ state }) => {
     URL.revokeObjectURL(url);
   };
 
+  /**
+   * Sub-component rendering the Semantic Diff Projection bar chart.
+   *
+   * @returns {JSX.Element} The rendered SemanticDiff chart.
+   */
   const SemanticDiff = () => (
     <div className="bg-slate-900 border border-slate-800 rounded-lg p-6 space-y-4">
       <div className="flex items-center justify-between">
@@ -92,6 +111,11 @@ const PlanViewer: React.FC<PlanViewerProps> = ({ state }) => {
     </div>
   );
 
+  /**
+   * Sub-component rendering the Architectural Drift Timeline.
+   *
+   * @returns {JSX.Element} The rendered DriftTimeline view.
+   */
   const DriftTimeline = () => (
     <div className="bg-slate-900 border border-slate-800 rounded-lg p-6 space-y-4">
         <div className="flex items-center justify-between">
@@ -191,6 +215,12 @@ const PlanViewer: React.FC<PlanViewerProps> = ({ state }) => {
 };
 
 // Simple loader helper for PlanViewer
+/**
+ * A simple animated loading icon component.
+ *
+ * @param {Object} props - Component props.
+ * @returns {JSX.Element} The rendered SVG loader icon.
+ */
 function Loader2({ className }: { className?: string }) {
     return (
         <svg

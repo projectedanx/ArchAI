@@ -1,11 +1,22 @@
+
 import React from 'react';
 import { AuditEvent } from '../types';
 import { ClipboardList, User, Bot } from 'lucide-react';
 
+/**
+ * Props for the AuditLog component.
+ * @property {AuditEvent[]} events - The chronological list of events to display in the audit trail.
+ */
 interface AuditLogProps {
   events: AuditEvent[];
 }
 
+/**
+ * Displays an immutable, chronological log of system actions.
+ *
+ * @param {AuditLogProps} props - The component props.
+ * @returns {JSX.Element} The rendered AuditLog component.
+ */
 const AuditLog: React.FC<AuditLogProps> = ({ events }) => {
   return (
     <div className="w-80 border-l border-slate-800 bg-slate-900 flex flex-col hidden xl:flex">
