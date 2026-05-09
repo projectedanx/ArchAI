@@ -6,7 +6,7 @@
 ## 🚦 Current Status
 **Phase:** Release Candidate / Paraconsistent Expansion
 **Active Workflow:** Dynamic Recursive Loop + Domain-Native Operators (Stare Decisis, DDx) + DCCD Strategy Formulated
-**Last Update:** Formulated Dynamic Contextual Confidence Guardrails (DCCD) strategy to enforce schema twinning under low confidence.
+**Last Update:** Formulated Stigmergic Inversion strategy. AI isolates logic shears via Epistemic Pheromones; Human applies Semantic Mutex Locks.
 
 ## 🏗️ Critical Infrastructure (DO NOT DELETE OR SIMPLIFY)
 
@@ -32,6 +32,7 @@ The following components currently use mock data and *should* be connected to re
 *   **`decisionLog`:** Array of `DecisionRecord` objects used by Stare Decisis.
 *   **`escrowStore`:** Array of Tension Nodes for Epistemic Escrow.
 *   **`scarRegistry`:** Ingested architectural failures driving Auto-Ratcheting.
+*   **`stigmergicMarkers`:** Array of Epistemic Pheromones for Semantic Mutex Locking.
 *   **`resonanceMetrics`:** (Planned) Live data feeding the Harmonic Resonance Matrix.
 
 ## 🚫 Negative Constraints (The "No-Go" Zone)
