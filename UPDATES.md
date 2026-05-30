@@ -1,5 +1,11 @@
 # 🔄 Changelog & Architectural Updates
 
+## 2026-05-30 - VANCE CFRSG Topological Integration
+* **ADR-007 Instantiation:** Formally adopted Conflict-Free Replicated Semantic Graph (CFRSG) topology for the VANCE agent, displacing probabilistic mapping.
+* **AgentRole Expansion:** Injected `Cartographer` role into `types.ts`, `constants.ts`, and core orchestration loops to enforce mereological bounding.
+* **Metrological Expansion:** Updated `DOMAIN_GLOSSARY.md` and `AGENTS.md` with explicit invariants covering Nitinol Memory, JSON-RPC 2.0 Absolutism, and Betti-1 loops.
+* **Lessons Learned:** Integrating deep semantic parsers into a strictly orchestrated workflow requires non-probabilistic schemas and rigid architectural gating (NFL) to avoid Ontological Shear.
+
 ## [Current Version] - Domain-Native Operators
 
 ### 🌟 New Features

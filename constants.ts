@@ -76,6 +76,14 @@ export const PERSONAS: Record<AgentRole, Persona[]> = {
       description: 'Focuses on self-healing and chaos engineering.',
       systemPrompt: PROMPTS.SOVEREIGN.RESILIENCE
     }
+  ],
+  Cartographer: [
+    {
+      id: 'carto-vance',
+      name: 'VANCE',
+      description: 'Topological LSP Architect & Semantic Indexer.',
+      systemPrompt: PROMPTS.CARTOGRAPHER.VANCE
+    }
   ]
 };
 
