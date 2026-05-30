@@ -7,6 +7,9 @@
 
 | Term | Definition | Semantic Bounding |
 | :--- | :--- | :--- |
+| **Nitinol Memory** | The architectural capacity to encode JSON-RPC failures into hard constraints, preventing repeated malformations. | Integrated via the Nitinol Failure Ledger (NFL). |
+| **Mereological Bounding** | The strict enforcement of scope boundaries to distinguish variables within closures from globals. | Prevents transitivity fallacies. |
+| **CFRSG** | Conflict-Free Replicated Semantic Graph. The persistent, incrementally-updated DAG underlying VANCE. | Edges must be strictly directional and typed. |
 | **Agentic Engineering** | The practice of treating LLMs as deterministic software artifacts within strict workflow constraints, rather than probabilistic conversational agents. | Not interchangeable with "prompt engineering" or "chatbots". |
 | **Sovereign AI** | An AI agent operating with deterministic local constraints and explicit decision-making autonomy within predefined architectural boundaries. | Must run within the `Client-Side Agentic Orchestration` pattern. |
 | **Epistemic Escrow** | A quarantine state (`EscrowStore`) where contradictory agent outputs (CFDI > 0.15) are held until a human provides a Semantic Mutex Lock. | Data structure: `EscrowEntry[]`. Status MUST be `'Quarantined'`. |
@@ -18,6 +21,8 @@
 
 | Term | Definition | Context |
 | :--- | :--- | :--- |
+| **Betti-1 Loop** | A topological cycle in a dependency graph indicating a circular dependency deadlock. | Detected via DFS cycle detection in IMPORTS subgraph. |
+| **Draft-Conditioned Constrained Decoder (DCCD)** | The validation layer enforcing the LSP 3.17 schema at the generation boundary. | Must validate prior to JSON-RPC payload emission. |
 | **CFDI** | Confidence-Fidelity Divergence Index. Measures the variance between agent proposals. | `CFDI > 0.15` triggers Epistemic Escrow. |
 | **DCCD** | Dynamic Contextual Confidence Guardrails. Modifies data schema rigidness based on agent confidence. | Confidence > 0.85 = `StrictPlanSchema`. Confidence <= 0.85 = `BranchedPlanSchema`. |
 | **Semantic Saponification** | The mathematical washing out of precise disciplinary definitions into generic approximations by an LLM attempting to average out conflicts. | Strictly prohibited by `AGENTS.md` Rule 1. |

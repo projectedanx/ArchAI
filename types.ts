@@ -2,7 +2,7 @@
 /**
  * Defines the allowed roles for agents within the system.
  */
-export type AgentRole = 'Planner' | 'Security' | 'Performance' | 'Style' | 'Sovereign';
+export type AgentRole = 'Planner' | 'Security' | 'Performance' | 'Style' | 'Sovereign' | 'Cartographer';
 
 /**
  * Represents a specific persona profile an agent can adopt.
@@ -98,6 +98,8 @@ export interface DiffMetric {
 
 /**
  * Represents a constraint generated from resolved conflicts to prevent future regressions.
+ * In the context of VANCE, this also functions as the Nitinol Failure Ledger (NFL),
+ * encoding past JSON-RPC malformation events as hard negative constraints.
  * @property {string} id - Unique identifier for the scar ratchet.
  * @property {string} sourceEscrowId - The ID of the escrow entry that precipitated this constraint.
  * @property {string} timestamp - Timestamp when the ratchet was created.

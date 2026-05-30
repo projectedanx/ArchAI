@@ -2,7 +2,7 @@
 import React from 'react';
 import { AgentRole, WorkflowState } from '../types';
 import { PERSONAS } from '../constants';
-import { Settings, Play, Shield, Zap, Palette, Map, Brain, Globe, Anchor, Flame, Archive } from 'lucide-react';
+import { Settings, Play, Shield, Zap, Palette, Map, Brain, Globe, Anchor, Flame, Archive, Network } from 'lucide-react';
 
 /**
  * Props for the ConfigPanel component.
@@ -45,6 +45,7 @@ const ConfigPanel: React.FC<ConfigPanelProps> = ({ state, onUpdate, onStart }) =
       case 'Performance': return <Zap className="w-4 h-4" />;
       case 'Style': return <Palette className="w-4 h-4" />;
       case 'Sovereign': return <Anchor className="w-4 h-4" />;
+      case 'Cartographer': return <Network className="w-4 h-4" />;
     }
   };
 

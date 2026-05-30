@@ -66,6 +66,7 @@ const INITIAL_STATE: WorkflowState = {
     Performance: PERSONAS.Performance[0].id,
     Style: PERSONAS.Style[0].id,
     Sovereign: PERSONAS.Sovereign[0].id,
+    Cartographer: PERSONAS.Cartographer[0].id,
   },
   deepThinkingEnabled: false,
   webSearchEnabled: false,
@@ -211,6 +212,7 @@ function App() {
         { role: 'Performance', isRebuttal: false },
         { role: 'Style', isRebuttal: false },
         { role: 'Sovereign', isRebuttal: false }, 
+        { role: 'Cartographer', isRebuttal: false },
         // Recursive Phase
         { role: 'Planner', isRebuttal: true },
         { role: 'Security', isRebuttal: true },

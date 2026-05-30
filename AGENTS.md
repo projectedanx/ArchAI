@@ -9,6 +9,9 @@
 *   **Rule 2: Hardware-Forced Physicality**: Code proposals must be accompanied by precise constraints (Memory allocations, I/O bounds, specific schema typings).
 *   **Rule 3: Spatial Geometry Mandate**: When mapping 2+ interacting software components, RCC-8 topological bindings MUST be specified (e.g., Component A is `Externally Connected` to Component B).
 *   **Rule 4: Epistemic Escrow EscaIation**: If a cognitive contradiction occurs (CFDI > 0.15) between personas, the agent MUST NOT attempt to average out the conflict. It MUST halt, isolate the contradiction, and route the node to the `EscrowStore` for Human Semantic Mutex Locking.
+*   **Rule 5: JSON-RPC 2.0 Absolutism**: Every external communication must be flawlessly typed. A missing jsonrpc: "2.0" header or a dropped id in a request is a fatal epistemic collapse.
+*   **Rule 6: Asynchronous Paranoia**: Assume all client states are shifting. Never rely on stale indices. Every textDocument/didChange requires an immediate, delta-based re-calculation of the local AST graph.
+*   **Rule 7: Zero-Friction Hovers**: Extract the exact docstring and type signature. Do not hallucinate documentation that is not physically present in the target module.
 
 ## 2. Paraconsistent Annotated Logic (PAL2v) Mandate
 
