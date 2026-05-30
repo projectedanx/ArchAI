@@ -7,7 +7,7 @@
 **Phase:** Production-Ready PM Persona Integration
 **Active Workflow:** Dynamic Recursive Loop + Domain-Native Operators (Stare Decisis, DDx) + DCCD 15/85 Schema Inversion + Epistemic Escrow EscaIation
 **Last Update:** Integrated Sovereign Governance frameworks including `AGENTS.md` and `DOMAIN_GLOSSARY.md` for deterministic metrology. Epistemic Escrow and DCCD codified in ADRs 005 & 006.
-**Recent Shift:** Instantiated VANCE CFRSG topological indexing paradigm (ADR-007) and injected the Cartographer AgentRole.
+**Recent Shift:** Instantiated VANCE CFRSG topological indexing paradigm (ADR-007) and Symbiotic Isomorphism Tracking for Human-AI collaboration (ADR-008).
 
 ## 🏗️ Critical Infrastructure (DO NOT DELETE OR SIMPLIFY)
 
@@ -15,7 +15,8 @@ The following files contain core logic that must be preserved during any refacto
 
 | File Path | Complexity | Critical Logic / Functions | Risk of Regression |
 | :--- | :--- | :--- | :--- |
-| **`App.tsx`** | 🔴 High | `runAgentLoop`, `executeStareDecisis`, `executeDDx`, `conversationFlow`, `evaluateCFDI`. | High. The orchestration logic now includes pre-flight and pre-consensus operator checks, plus CFDI routing. |
+| **`App.tsx`** | 🔴 High | `runAgentLoop`, `executeStareDecisis`, `executeDDx`, `conversationFlow`, `evaluateCFDI`. | High. The orchestration logic now includes pre-flight and pre-consensus operator checks, plus CFDI routing. Integrates `SymbioticResonance` tracker. |
+| **`components/SymbioticResonance.tsx`** | 🟢 Low | `SymbioticResonance` telemetry component. | Low. UI metric mapping Epistemic Value via Golden Scar Protocol. |
 | **`services/geminiService.ts`** | 🔴 High | `executeStareDecisis`, `executeDDx`, `generateConsensusPlan`. | Critical. Ensure prompts are correctly wired to the Sovereign roles and DCCD schema branching is respected. |
 | **`types.ts`** | 🟡 Medium | `DecisionRecord`, `WorkflowState`, `EscrowEntry`, `ScarRatchet`. | Medium. Data model changes underpinning Escrow and Ratcheting. |
 | **`prompts.ts`** | 🟢 Low | `PROMPTS.OPERATORS`, `PERSONAS`. | Low. Centralized operator instructions governed by Metrological rules. |
