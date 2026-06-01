@@ -72,6 +72,7 @@ The system is built upon the following theoretical frameworks:
 5.  **Agent Workflow:** Observe the agents as they analyze the goal, debate approaches, and refine their stances. The Audit Trail on the right will log every system action.
 6.  **Consensus Plan:** Once the agents reach a consensus, the system will synthesize a final architectural plan, complete with ADRs, migration steps, and risk mitigation strategies. You can view the semantic diff projection and architectural drift timeline on the right.
 7.  **Epistemic Escrow:** If any agent's response creates significant cognitive tension, it will be quarantined in the Epistemic Escrow. You can review these entries and elevate them to "Scar Ratchets" to prevent future regressions.
+8.  **Symbiotic Isomorphism:** Observe the `SymbioticResonance` telemetry component in the sidebar, which tracks the dynamic cognitive tension between AI Fidelity and Human Intuition via the Golden Scar Protocol.
 
 ## 📜 License
 

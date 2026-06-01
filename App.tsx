@@ -8,7 +8,8 @@ import ConfigPanel from './components/ConfigPanel';
 import AgentOrchestrator from './components/AgentOrchestrator';
 import PlanViewer from './components/PlanViewer';
 import AuditLog from './components/AuditLog';
-import { LayoutGrid, Cpu, ListEnd } from 'lucide-react';
+import { LayoutGrid, Cpu, ListEnd, ShieldAlert } from 'lucide-react';
+import { SymbioticResonance } from './components/SymbioticResonance';
 
 // Mock historical drift data
 const HISTORICAL_DRIFT: DriftEntry[] = [
@@ -397,6 +398,10 @@ function App() {
             <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-100 to-slate-400 hidden lg:block">
                 Arch<span className="text-indigo-400">AI</span>
             </h1>
+        </div>
+
+        <div className="mt-4 mb-4 px-2 hidden lg:block">
+            <SymbioticResonance aiFidelity={state.messages.length > 0 ? 0.92 : 0.4} humanIntuition={0.88} />
         </div>
 
         <nav className="space-y-2 flex-1">
