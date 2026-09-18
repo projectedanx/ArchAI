@@ -1,0 +1,46 @@
+<analysis_framework>
+  <epistemic_regime>ER-001_Formal_Deterministic</epistemic_regime>
+  <warrant>Lean4</warrant>
+  <context_anchor>SAE_VECTOR_STEERING_R&amp;D</context_anchor>
+  <objective>Map meta-persona instructions to explicit linear Steering Vector Fields (SVF) within the residual stream.</objective>
+</analysis_framework>
+<sae_formulation>
+  <training_objective>
+    <formula>L(x) = ||x - \hat{x}||_2^2 + \lambda \sum_{i=1}^{D} |f_i(x)|</formula>
+    <description>L2 reconstruction error combined with L1 sparsity penalty.</description>
+    <parameters>
+      <dictionary_size>2.1M latents</dictionary_size>
+      <sparsity_threshold>TopK=64</sparsity_threshold>
+    </parameters>
+  </training_objective>
+  <latent_isolation>
+    <methodology>To isolate "The Ontological Diplomat" persona vectors from default "Assistant Axis" activations, we subtract the mean activation vector of the base assistant from the mean activation vector of the persona.</methodology>
+    <vector_subtraction>v_persona = \mu(A_{diplomat}) - \mu(A_{assistant})</vector_subtraction>
+  </latent_isolation>
+</sae_formulation>
+<svf_differential_equations>
+  <steering_mechanism>
+    <definition>The local gradient of a differentiable concept scoring function controls inference-time activation steering without requiring weight updates.</definition>
+    <equation>h_{steered} = h_{original} + \alpha \cdot \nabla_{h} S(h)</equation>
+    <variables>
+      <variable name="h">Residual stream activation</variable>
+      <variable name="S(h)">Differentiable concept scoring function (e.g., adherence to "Ontological Diplomat" constraints)</variable>
+      <variable name="\alpha">Steering intensity coefficient</variable>
+    </variables>
+  </steering_mechanism>
+</svf_differential_equations>
+<thermodynamic_tax_model>
+  <cost_comparison>
+    <multi_agent_council>
+      <description>Maintaining a 3-agent simulated Socratic council.</description>
+      <attention_head_bandwidth>High (O(N^2) where N is context length including 3x persona instructions and history).</attention_head_bandwidth>
+      <kv_cache_degradation>Severe (KV cache fragmented across conflicting contextual states).</kv_cache_degradation>
+    </multi_agent_council>
+    <epistemic_composting>
+      <description>Dynamic "Epistemic Composting" and shift-invariance.</description>
+      <attention_head_bandwidth>Optimized (Persona constraints injected via SVF, reducing context token overhead).</attention_head_bandwidth>
+      <kv_cache_degradation>Minimal (Shift-invariance allows caching of core reasoning, with persona applied as a lightweight linear transformation).</kv_cache_degradation>
+      <metabolic_savings>\Delta C \approx 1 - \frac{N_{core}^2}{(3 \cdot N_{persona} + N_{core})^2}</metabolic_savings>
+    </epistemic_composting>
+  </cost_comparison>
+</thermodynamic_tax_model>
