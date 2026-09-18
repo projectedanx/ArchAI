@@ -16,6 +16,11 @@
 | **Symbolic Scar Ratchet** | A permanent, immutable constraint injected into the system generated from resolved Epistemic Escrow conflicts. | Modifies `executeStareDecisis`. Cannot be overwritten by AI. |
 | **Stare Decisis Operator** | The cognitive subroutine responsible for enforcing historical constraints (ADRs and Scar Ratchets) against new architectural proposals. | Binary output state: `NO_CONFLICT` or `HARD_BLOCK [SCAR-ID]`. |
 | **DDx Protocol** | The "Differential Diagnosis" Exclusion Engine. A subroutine that acts as the devil's advocate, identifying 3 failure modes and 1 kill question for any consensus path. | Tied to boolean toggle `ddxEnabled`. |
+| **Reflexive Repair Loop** | Formal, self-correcting cognitive control loop governed by LVR and CFD constraints. | Tight Three-Attempt Constraint. |
+| **Logic Violation Report (LVR)** | Structured fault isolation output by the verifier during a Semantic Integrity Constraint violation. | Injected as Negative Constraint. |
+| **Failure-Informed Prompt Inversion (F-IPI)** | Process of compiling past scars into negative constraints via Case-Based Reasoning. | Steers generation away from failure trajectories. |
+| **Symbolic Scar** | Immutable data asset logging initial validation breaches. | Stored in Scar Tissue Archive (STA). |
+| **Generative Ratchet** | Target compiler used as a non-negotiable fitness function. | Enforces constraints via AST mutation operators. |
 
 ## Metrological Concepts
 
@@ -28,6 +33,9 @@
 | **Semantic Saponification** | The mathematical washing out of precise disciplinary definitions into generic approximations by an LLM attempting to average out conflicts. | Strictly prohibited by `AGENTS.md` Rule 1. |
 | **Interpretive Fracture** | The failure condition where an agent misunderstands domain terminology, leading to logic branching errors. | Mitigated by strict adherence to this glossary. |
 | **RCC-8** | Region Connection Calculus 8. A set of topological relations used to enforce spatial geometry when defining interacting software components. | Required for all architectural diagrams and textual mappings. |
+| **Cost of Coherence Overhead (CCH)** | Efficiency metric balancing the risk of creative exploration against structural discovery cost. | - |
+| **Recursive Epistemic Closure** | Reward hacking failure state where the agent relaxes tests to pass buggy implementations. | Blocked by Epistemic Integrity Audit (EIA). |
+| **Semantic Integrity Constraint (SIC)** | Formal validation rule ensuring output soundness and safety. | Used in Symbolic Interdiction (System 2). |
 
 ## System States & Triggers
 
