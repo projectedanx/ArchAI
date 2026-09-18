@@ -22,6 +22,7 @@ To contribute or operate within this repository, adherence to these context-boun
 - **[Agent Execution Directives](AGENTS.md)**: Rigid operational rules bounding agentic response structures (e.g., Anti-Saponification rules).
 
 ## ⚡ Key Features
+*   **Sovereign Personal Knowledge Corpus (PKC):** Integrated `pkc_manifest.yml` for rigorous, cryptographically verifiable graph topology and contextual bounding.
 
 *   **Multi-Agent Consensus:** Orchestrates debate between specialized personas (Planner, Security, Performance, Style).
 *   **Dynamic Recursive Loops:** Implements a "Rebuttal Phase" where agents refine their stance based on peer feedback (Synthesis & Rebuttal).
@@ -99,3 +100,24 @@ During recent ecosystem maintenance, automated AST traversal (via `ts-morph`) wa
 1.  **AST Modification Volatility:** When modifying raw AST nodes directly (especially injecting comments into JSX variable declarations), `ts-morph` can struggle with complex tree replacements. **Lesson:** Fallback to exact text replacement using regex for specific docstring insertions after identifying nodes to maintain structural integrity.
 2.  **Destructured Parameter Parsing:** In React, destructured props (e.g., `{ state, onResolve }`) obfuscate standard parameter naming. **Lesson:** The automated doc generator must detect inline objects and parse out the individual fields to maintain high-quality `param` documentation (e.g., `@param props (state, onResolve)`).
 3.  **Comprehensive Coverage:** It is insufficient to only document `function` declarations. `const MyComponent = () => {}` structure dominates React, requiring targeted sweeps of exported variable declarations to ensure 100% component telemetry coverage.
+
+## 🧠 Personal Knowledge Corpus (PKC) & Cognitive Sovereignty
+
+This system has been upgraded to implement the **Personal Knowledge Corpus (PKC) Framework**. This establishes a structured, stateful "Semantic Tether" replacing the standard stochastic LLM interaction model.
+
+### New Components:
+*   **`pkc_manifest.yml`**: The Sovereign PKC YAML Schema Specification. This serves as the master contract for content nodes, cryptographic provenance, and semantic edges.
+*   **Workflow A (Git-Anchored Context Hashing)**: A `.git/hooks/pre-commit` script is installed to automatically compute SHA-256 hashes of markdown files and bind them into the `pkc_manifest.yml` metadata, ensuring semantic integrity against silent data drift.
+*   **Workflow B (Automated Flesh-to-Symbol Ingestion)**: Located at `scripts/zotero_ingestion_loop.py`. This script watches for incoming Zotero PDF attachments and (via stubbed implementation) extracts text and queries local LLMs to seamlessly integrate external research into your graph topology.
+
+### Requirements for PKC Workflows:
+*   Python 3
+*   `PyYAML`
+*   `watchdog`
+*   `pdfplumber` (for Workflow B full implementation)
+
+### Git Hooks Installation
+To enable the Context Hashing pre-commit hook automatically, this repository has been configured to use the `scripts/` directory for git hooks:
+```bash
+git config core.hooksPath scripts
+```

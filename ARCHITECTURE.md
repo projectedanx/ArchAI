@@ -53,3 +53,12 @@ We employ a **Tiered Model Strategy** based on the "12-Factor Agent" principles:
 
 - **Gateway Topology:** Domain-agnostic central API Gateways must remain decoupled from UI rendering logic (Invariant `SCAR-GATEWAY-DECOUPLE`).
 - **BFF Topology:** Backends for Frontends (BFF) must be strictly mapped one-to-one with client deployments and isolated from Shared Persistence Traps (Invariant `SCAR-BFF-BINDING`).
+
+## 6. Personal Knowledge Corpus (PKC) & Context Engineering
+
+The architecture integrates a strict Personal Knowledge Corpus layer defined by `pkc_manifest.yml`.
+This acts as a structural inversion of the "statefulness vacuum", transforming the knowledge base into an Executable Context Bundle (CxB).
+
+*   **Sovereign YAML Specification**: `pkc_manifest.yml` dictates cryptographic node verification, neuro-symbolic meaning space anchors, and RCC-8 topological semantic edges.
+*   **Git-Anchored Pre-Commit Pipeline**: Prevents semantic drift by automatically hashing updated markdown files against the manifest via `.git/hooks/pre-commit`.
+*   **Flesh-to-Symbol Ingestion**: Background telemetry (`scripts/zotero_ingestion_loop.py`) designed to hook unstructured data (PDFs) into the strict topological graph via Llama-3 extraction pipelines (stubbed).
