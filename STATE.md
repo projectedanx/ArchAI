@@ -45,3 +45,10 @@ The following components currently use mock data and *should* be connected to re
 2.  **Do NOT** remove the `thinkingConfig` from the Gemini service.
 3.  **Do NOT** implement file-system writes directly in the browser environment.
 4.  **Do NOT** average out cognitive conflicts (CFDI > 0.15) to force consensus; they MUST route to Epistemic Escrow.
+
+## 1. Ground Truth
+*   **PKC Topology**: The repository integrates a Sovereign Personal Knowledge Corpus (`pkc_manifest.yml`) defining cryptographic provenance and relational semantic edges for all internal domain knowledge.
+
+### Infrastructure State
+*   **Automated Zotero Ingestion Loop**: `scripts/zotero_ingestion_loop.py` actively monitors and stubs the neuro-symbolic extraction of attached PDFs.
+*   **Git-Anchored Context Hashing**: `.git/hooks/pre-commit` enforces SHA-256 state matching between raw files and the manifest.
