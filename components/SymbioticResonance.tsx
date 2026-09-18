@@ -6,6 +6,11 @@ interface SymbioticResonanceProps {
     humanIntuition: number;
 }
 
+/**
+ * Orchestrates the SymbioticResonance operation.
+ * @param { aiFidelity, humanIntuition } - The configuration parameter for { aiFidelity, humanIntuition }.
+ * @returns The resultant computed value or component.
+ */
 export function SymbioticResonance({ aiFidelity, humanIntuition }: SymbioticResonanceProps) {
     // Paraconsistent Logic: Golden Scar Protocol (Φ = 1.618 / 1.000)
     // We hold both the AI Fidelity and Human Intuition in structural tension.

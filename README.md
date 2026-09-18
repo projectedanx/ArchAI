@@ -89,3 +89,13 @@ To contribute or operate within this repository, adherence to these context-boun
 
 Proprietary Sovereign Architecture.
 
+
+## 📘 Documentation Mandate & Lessons Learned
+
+### Automated JSDoc Enforcement
+During recent ecosystem maintenance, automated AST traversal (via `ts-morph`) was deployed to systematically audit and enforce complete JSDoc coverage across all exported functions, classes, and variable declarations.
+
+**High-Value Insights:**
+1.  **AST Modification Volatility:** When modifying raw AST nodes directly (especially injecting comments into JSX variable declarations), `ts-morph` can struggle with complex tree replacements. **Lesson:** Fallback to exact text replacement using regex for specific docstring insertions after identifying nodes to maintain structural integrity.
+2.  **Destructured Parameter Parsing:** In React, destructured props (e.g., `{ state, onResolve }`) obfuscate standard parameter naming. **Lesson:** The automated doc generator must detect inline objects and parse out the individual fields to maintain high-quality `param` documentation (e.g., `@param props (state, onResolve)`).
+3.  **Comprehensive Coverage:** It is insufficient to only document `function` declarations. `const MyComponent = () => {}` structure dominates React, requiring targeted sweeps of exported variable declarations to ensure 100% component telemetry coverage.
