@@ -1,6 +1,6 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
-import { AgentConfig, AgentRole, WorkflowState, DecisionRecord } from "../types";
+import { AgentConfig, AgentRole, WorkflowState, DecisionRecord, StrictPlanSchema, BranchedPlanSchema } from "../types";
 import { PERSONAS } from "../constants";
 import { PROMPTS } from "../prompts";
 
