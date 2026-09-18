@@ -110,3 +110,8 @@ Measured TTD: INDETERMINATE (No CI/CD pipeline found). [∇]
 
 ### Falsification Condition Triggered
 * **NOMINATIVE TRAP:** `DATABASE_URL` is referenced in the codebase context but missing from `.env` mappings and physical files. [⊘]
+
+## TIER 6: Pluriversal Feature Discovery Map
+- **AST Entropy Reaper:** Developed as a solution for memory leaks vs. high-throughput FAILED_NLI_CONTRADICTION. Serializes telemetry weighted by CFDI to resolve paraconsistent state conflict.
+- **Stigmergic Inversion:** AI outputs exceeding CFDI > 0.15 injected with `+++EpistemicPheromone` logic boundaries in Escrow to combat Semantic Saponification.
+- **Semantic Mutex Lock:** Hard boundary enforcement of Constitutional Austenite logic (`executeStareDecisis` parsing `SCAR-` invariants).
