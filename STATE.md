@@ -4,9 +4,9 @@
 > **WARNING TO AGENTS:** This file represents the immutable truth of the project's current state. Read this before proposing any refactors. Do not hallucinate file existence.
 
 ## 🚦 Current Status
-**Phase:** Pluriversal_Codebase_Feature_Discovery (Contract Execution Phase)
+**Phase:** Cognitive_Rheology_Integration (Contract Execution Phase)
 **Active Workflow:** Dynamic Recursive Loop + Domain-Native Operators (Stare Decisis, DDx) + DCCD 15/85 Schema Inversion + Epistemic Escrow EscaIation
-**Last Update:** Integrated Sovereign Governance frameworks including `AGENTS.md` and `DOMAIN_GLOSSARY.md` for deterministic metrology. Epistemic Escrow and DCCD codified in ADRs 005 & 006.
+**Last Update:** Integrated Rheological Controllers (ADR-012), Epistemic Composting, and Sovereign Governance frameworks including `AGENTS.md` and `DOMAIN_GLOSSARY.md` for deterministic metrology. Epistemic Escrow and DCCD codified in ADRs 005 & 006.
 **Recent Shift:** Instantiated VANCE CFRSG topological indexing paradigm (ADR-007) and Symbiotic Isomorphism Tracking for Human-AI collaboration (ADR-008). Synthesized Edge-Tier Gateways & BFF Taxonomy (ADR-010) enforcing SCAR-GATEWAY-DECOUPLE and SCAR-BFF-BINDING invariants. Synthesized Reflexive Repair Loop (ADR-011) enforcing Generative Ratchet and LVR injection.
 
 ## 🏗️ Critical Infrastructure (DO NOT DELETE OR SIMPLIFY)
@@ -17,6 +17,7 @@ The following files contain core logic that must be preserved during any refacto
 | :--- | :--- | :--- | :--- |
 | **`docs/adr/010-edge-tier-bff-taxonomy.md`** | 🟡 Medium | BFF vs API Gateway topological bounds. | Medium. Protects against UI rendering logic drift in gateways. |
 | **`docs/adr/011-reflexive-repair-loop.md`** | 🔴 High | Reflexive Repair Loop, LVR, F-IPI. | High. Protects against stochastic agent volatility. |
+| **`docs/adr/012-rheological-controller.md`** | 🔴 High | VVP, RMS, Epistemic Composting. | High. Enforces deterministic execution boundaries. |
 | **`App.tsx`** | 🔴 High | `runAgentLoop`, `executeStareDecisis`, `executeDDx`, `conversationFlow`, `evaluateCFDI`. | High. The orchestration logic now includes pre-flight and pre-consensus operator checks, plus CFDI routing. Integrates `SymbioticResonance` tracker. |
 | **`components/SymbioticResonance.tsx`** | 🟢 Low | `SymbioticResonance` telemetry component. | Low. UI metric mapping Epistemic Value via Golden Scar Protocol. |
 | **`services/geminiService.ts`** | 🔴 High | `executeStareDecisis`, `executeDDx`, `generateConsensusPlan`. | Critical. Ensure prompts are correctly wired to the Sovereign roles and DCCD schema branching is respected. |
