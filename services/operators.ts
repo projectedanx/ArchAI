@@ -68,7 +68,15 @@ export const executeStareDecisis = async (goal: string, decisionLog: DecisionRec
                 systemInstruction: PROMPTS.OPERATORS.STARE_DECISIS,
             }
         });
-        return response.text || "NO_CONFLICT";
+
+        const responseText = response.text || "NO_CONFLICT";
+
+        // Stigmergic Inversion: Parse Semantic Mutex Locks
+        if (responseText.includes("SCAR-")) {
+            return `HARD BLOCK: ${responseText}`;
+        }
+
+        return responseText;
     } catch (error) {
         console.error("Stare Decisis Error", error);
         return "NO_CONFLICT"; // Fail open if operator fails

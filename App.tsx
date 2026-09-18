@@ -256,7 +256,8 @@ function App() {
                 personaName,
                 content: response,
                 cfdiScore,
-                status: 'Quarantined'
+                status: 'Quarantined',
+                epistemicPheromone: '+++EpistemicPheromone'
             };
 
             setState(prev => ({

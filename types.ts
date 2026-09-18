@@ -81,6 +81,7 @@ export interface EscrowEntry {
   content: string;
   cfdiScore: number;
   status: 'Quarantined';
+  epistemicPheromone?: string;
 }
 
 /**
