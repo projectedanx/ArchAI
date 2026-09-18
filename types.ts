@@ -148,8 +148,37 @@ export interface DecisionRecord {
  * @property {DriftEntry[]} driftTimeline - The history of architectural drift events.
  * @property {DecisionRecord[]} decisionLog - The log of recorded architectural decisions.
  */
+
+/**
+ * Represents a single branched path when the AI is uncertain.
+ */
+export interface BranchedPath {
+  id: string;
+  title: string;
+  description: string;
+  metrics: DiffMetric[];
+  rationale: string;
+}
+
+/**
+ * Represents the structure of a branched plan returned when confidence <= 0.85.
+ */
+export interface BranchedPlanSchema {
+  confidence_score: number;
+  paths: BranchedPath[];
+}
+
+/**
+ * Represents the structure of a strict plan returned when confidence > 0.85.
+ */
+export interface StrictPlanSchema {
+  confidence_score: number;
+  plan: string;
+  metrics: DiffMetric[];
+}
+
 export interface WorkflowState {
-  step: 'config' | 'orchestration' | 'consensus' | 'audit' | 'escrow';
+  step: 'config' | 'orchestration' | 'consensus' | 'audit' | 'escrow' | 'dccd_resolution';
   goal: string;
   agentConfigs: Record<AgentRole, string>; // Role -> PersonaID
   deepThinkingEnabled: boolean;
@@ -159,8 +188,11 @@ export interface WorkflowState {
   escrowStore: EscrowEntry[];
   scarRegistry: ScarRatchet[];
   messages: AgentMessage[];
+
   finalPlan: string | null;
+  dccdPending: BranchedPlanSchema | null;
   diffMetrics: DiffMetric[]; 
+
   isProcessing: boolean;
   driftTimeline: DriftEntry[];
   decisionLog: DecisionRecord[]; // For Stare Decisis

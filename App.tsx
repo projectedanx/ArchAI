@@ -7,8 +7,9 @@ import { executeStareDecisis, executeDDx, evaluateCFDI } from './services/operat
 import ConfigPanel from './components/ConfigPanel';
 import AgentOrchestrator from './components/AgentOrchestrator';
 import PlanViewer from './components/PlanViewer';
+import { DCCDResolutionViewer } from './components/DCCDResolutionViewer';
 import AuditLog from './components/AuditLog';
-import { LayoutGrid, Cpu, ListEnd, ShieldAlert } from 'lucide-react';
+import { LayoutGrid, Bot, Cpu, ListEnd, ShieldAlert, GitBranch } from 'lucide-react';
 import { SymbioticResonance } from './components/SymbioticResonance';
 
 // Mock historical drift data
@@ -321,18 +322,30 @@ function App() {
       // Parse Logic
       let diffMetrics: DiffMetric[] = [];
       let finalPlan = rawPlanResponse;
+      let dccdPending = null;
+      let nextStep: WorkflowState['step'] = 'consensus';
       
       const jsonMatch = rawPlanResponse.match(/```json\n([\s\S]*?)\n```/);
       if (jsonMatch) {
           try {
               const parsed = JSON.parse(jsonMatch[1]);
-              if (Array.isArray(parsed)) {
+              if (parsed.confidence_score !== undefined) {
+                  if (parsed.confidence_score > 0.85) {
+                      diffMetrics = parsed.metrics || [];
+                      finalPlan = parsed.plan || rawPlanResponse.replace(jsonMatch[0], '').trim();
+                  } else {
+                      dccdPending = parsed;
+                      nextStep = 'dccd_resolution';
+                      addAuditLog('DCCD Triggered', `Ambiguity detected (confidence: ${parsed.confidence_score}). Twinning engaged.`, 'System');
+                  }
+              } else if (Array.isArray(parsed)) {
                   diffMetrics = parsed;
+                  finalPlan = rawPlanResponse.replace(jsonMatch[0], '').trim();
               }
-              finalPlan = rawPlanResponse.replace(jsonMatch[0], '').trim();
           } catch (e) {
               console.error("Failed to parse metrics from plan:", e);
               addAuditLog('Parsing Warning', 'Could not extract metrics from plan', 'System');
+              finalPlan = rawPlanResponse.replace(jsonMatch?.[0] || '', '').trim();
           }
       }
 
@@ -347,14 +360,17 @@ function App() {
       setState(prev => ({
         ...prev,
         finalPlan: finalPlan,
+        dccdPending: dccdPending,
         diffMetrics: diffMetrics,
         isProcessing: false,
-        step: 'consensus',
-        driftTimeline: [newDriftEntry, ...prev.driftTimeline]
+        step: nextStep,
+        driftTimeline: nextStep === 'consensus' ? [newDriftEntry, ...prev.driftTimeline] : prev.driftTimeline
       }));
       
-      addAuditLog('Plan Generated', 'Consensus plan created', 'System');
-      addAuditLog('Drift Recorded', 'Architectural drift timeline updated', 'System');
+      if (nextStep === 'consensus') {
+        addAuditLog('Plan Generated', 'Consensus plan created', 'System');
+        addAuditLog('Drift Recorded', 'Architectural drift timeline updated', 'System');
+      }
 
     } catch (error) {
       console.error("Workflow failed", error);
@@ -407,6 +423,7 @@ function App() {
         <nav className="space-y-2 flex-1">
             <NavItem step="config" icon={LayoutGrid} label="Configuration" />
             <NavItem step="orchestration" icon={Bot} label="Agent Workflow" />
+            <NavItem step="dccd_resolution" icon={GitBranch} label="DCCD Resolution" />
             <NavItem step="consensus" icon={ListEnd} label="Consensus Plan" />
             <NavItem step="escrow" icon={ShieldAlert} label="Epistemic Escrow" />
         </nav>
