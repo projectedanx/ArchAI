@@ -52,3 +52,25 @@ The CFDI logic has been empirically validated via Python-based simulated enactme
 - **Golden Scar Protocol:** The simulation verified that `AST_Entropy_Reaper` reached the ideal target of $\Phi \approx 1.618$ CACR, mathematically validating its placement into the architecture.
 
 *Thermodynamic Restoration (Heating) initiated to revert to $z_0^\star$.*
+
+## 4. Inferred Harness Specification: Advanced Research Prompts (DRAFT-CONDITIONED GOALS)
+
+These research prompts support the reverse engineering and continuous falsification of edge-tier and gateway architectures:
+
+### 4.1 Automated Verification of Client Payload Minimization and Schema Drift
+**Research Objective:** Design a systems specification for an automated AI testing harness that validates schema compliance and payload efficiency at the BFF boundary. The specification must:
+1. Intercept downstream microservice OpenAPI contracts and client-facing BFF payloads to build an active, directed dependency graph of properties.
+2. Automatically generate mutation tests on downstream microservice responses to map out how robustly the BFF isolates client applications from upstream contract drift.
+3. Calculate a quantitative "Contract Robustness Index" that evaluates the BFF's ability to gracefully degrade functionality using default fallbacks.
+
+### 4.2 Synthesizing Adaptive Rate-Limiting and Backpressure at the API Gateway Boundary
+**Research Objective:** Formulate a detailed engineering plan for an intelligent, adaptive rate-limiting and backpressure engine embedded within an API Gateway proxy. The system must:
+1. Continuously monitor real-time downstream system telemetry (database queues, CPU, network latencies).
+2. Use a dynamic feedback loop to adjust client throttling thresholds dynamically based on downstream service health.
+3. Implement load shedding and bulkhead partition policies prioritizing high-value user transactions.
+
+### 4.3 Continuous Detection of Business Logic Bleed and SRP Violations in BFF Architectures
+**Research Objective:** Create an architectural scanning harness designed to detect business logic bleed within polyglot BFF repositories. The tool must:
+1. Use static code analysis and abstract syntax tree (AST) parsers to identify state-changing calculations and domain rule evaluations inside BFF codebases.
+2. Correlate detected calculations with downstream microservice APIs to verify whether the BFF is duplicating or replacing logic belonging to core business services.
+3. Generate automated refactoring recommendations to migrate misplaced business logic back into its appropriate domain.

@@ -38,3 +38,13 @@
 | **15/85 Schema Inversion** | The architectural pattern executing DCCD. |
 
 *This glossary must be cross-referenced prior to generating any new documentation or code.*
+
+## Edge-Tier Architecture Entities
+
+| Term | Definition | Context |
+| :--- | :--- | :--- |
+| **Standard API Gateway** | A centralized, domain-agnostic reverse-proxy interface at the network perimeter. | Must remain decoupled from UI rendering logic. |
+| **BFF (Backend for Frontend)** | Client-specific API wrappers/adapters isolating rendering data requirements. | Lifecycle bounded 1-to-1 with its client. |
+| **Shared Persistence Trap** | An anti-pattern where BFFs directly write to a database, bypassing downstream API bounds. | Violates Bounded Context isolation. |
+| **Gateway Sinkhole** | A failure cascade where an unprotected gateway thread pool is exhausted by a failing downstream microservice. | Requires Circuit Breaker and Bulkhead Isolation. |
+| **Contract Robustness Index** | A metric evaluating a BFF's ability to gracefully degrade functionality under downstream contract drift. | Calculated via automated AI mutation testing. |

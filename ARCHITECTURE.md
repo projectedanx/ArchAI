@@ -48,3 +48,8 @@ We employ a **Tiered Model Strategy** based on the "12-Factor Agent" principles:
 ## 🔗 Data Flow
 
 `User Goal` -> `ConfigPanel` -> `App State` -> `Agent Orchestrator` -> `Gemini API` -> `AgentMessage` -> `App State` -> `PlanViewer`
+
+## Edge-Tier Constraints
+
+- **Gateway Topology:** Domain-agnostic central API Gateways must remain decoupled from UI rendering logic (Invariant `SCAR-GATEWAY-DECOUPLE`).
+- **BFF Topology:** Backends for Frontends (BFF) must be strictly mapped one-to-one with client deployments and isolated from Shared Persistence Traps (Invariant `SCAR-BFF-BINDING`).
