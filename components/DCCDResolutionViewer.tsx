@@ -7,6 +7,11 @@ interface DCCDResolutionViewerProps {
     onResolve: (selectedPath: BranchedPath) => void;
 }
 
+/**
+ * Executes the logic for DCCDResolutionViewer component/function.
+ * @param props (state, onResolve) - Parameter payload containing operational data.
+ * @returns React node representing the UI, or calculated result.
+ */
 export const DCCDResolutionViewer: React.FC<DCCDResolutionViewerProps> = ({ state, onResolve }) => {
     const pending = state.dccdPending;
 
