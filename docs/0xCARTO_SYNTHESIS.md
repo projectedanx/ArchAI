@@ -19,6 +19,13 @@ This is NOT a traditional stochastic chatbot interface, nor does it possess back
 | **Sovereign AI** | `README.md`, `ARCHITECTURE.md` | Local/Deterministic Agent | An AI agent operating with deterministic local constraints and explicit decision-making autonomy within predefined architectural boundaries. | [CULTURAL_ARTIFACT] |
 | **Symbiotic Resonance** | `components/SymbioticResonance.tsx` | System Health Telemetry | UI metric mapping Epistemic Value via Golden Scar Protocol. | [Φ] Tension |
 
+**Glossary Overrides (from `DOMAIN_GLOSSARY.md`):**
+
+- **Semantic Saponification:** The destructive averaging out of conflicting agent outputs. Strictly prohibited.
+- **Epistemic Escrow:** Quarantine zone for cognitive divergence (CFDI > 0.15).
+- **Golden Scar Protocol:** Inverting trauma (outages) into generative constraints via Stare Decisis.
+
+
 ## TIER 2: Architecture Topology Map
 
 Architecture Topology Map Generated via Mycelial CI Trace (DRP_7_PATTERN_MODEL).
@@ -44,6 +51,10 @@ graph TD
         I1["PHANTOM: Deployment Artifacts<br/>[⊘] No Docker, CI, or IaC found"]
     end
 
+    subgraph STRATEGY["Strategic Orchestration"]
+        S1["Strategic Integration Project Manager<br/>Bounds semantic drift"]
+    end
+
     subgraph TEST["Test Layer"]
         T1[vitest.config.ts]
         T2[components/SymbioticResonance.test.tsx]
@@ -65,6 +76,11 @@ graph TD
 ```
 
 ## TIER 3: CI/CD Pipeline Cartograph
+
+- **STATUS: ORPHANED / MISSING**
+- No `.github/workflows` directory exists.
+- No `Dockerfile` or containerization manifest exists.
+- Current build process relies purely on manual `npm run build` execution.
 
 ```mermaid
 sequenceDiagram
@@ -110,6 +126,13 @@ Measured TTD: INDETERMINATE (No CI/CD pipeline found). [∇]
 
 ### Falsification Condition Triggered
 * **NOMINATIVE TRAP:** `DATABASE_URL` is referenced in the codebase context but missing from `.env` mappings and physical files. [⊘]
+
+### Cultural Artifacts
+
+* **Cultural Artifact 1:** `AGENTS.md` - Executable infrastructure. Agents must obey Adjectival Bounding and Spatial Geometry Mandates.
+* **Cultural Artifact 2:** `CONSTRAINTS.md` - Operational bounds for the Project Manager, enforcing Escrow logic.
+* **Cultural Artifact 3:** `ADR-009` - Strategy for causal intent and hyper-dimensional navigation via the Bricolage technique.
+
 
 ## TIER 6: Pluriversal Feature Discovery Map
 - **AST Entropy Reaper:** Developed as a solution for memory leaks vs. high-throughput FAILED_NLI_CONTRADICTION. Serializes telemetry weighted by CFDI to resolve paraconsistent state conflict.

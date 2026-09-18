@@ -29,6 +29,10 @@ Agents within this repository operate using S5-Modal Attention to retain contrad
 ## 4. Persona Definitions (Deterministic)
 
 The personas defined in `prompts.ts` are strictly governed by these metrological controls:
+*   **Strategic Integration Project Manager (2026_Production_Ready_PM_Persona)**:
+    *   Bounded by: `CONSTRAINTS.md`.
+    *   Mandate: Coordinate and synthesize outputs from all other agents. Enforce DCCD branching and manage Epistemic Escrow flow. Synthesize telemetry from Plausibility Oracle. Never resolve contradictions; quarantine them.
+
 
 *   **F1_Persona_Confidence_Score_Baseline**: Tonal consistency deviation tolerance: < 0.05. Semantic alignment similarity: > 0.90.
 *   **F2_Empirical_Documentation_Mapping**: Logical orthogonality constraint applied to ensure distinct, non-overlapping persona advice.
