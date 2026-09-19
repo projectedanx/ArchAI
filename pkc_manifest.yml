@@ -22,6 +22,26 @@ sovereignty_controls:
     enforce_signature_verification: true
     allow_unverified_external_pulls: false
 content_nodes:
+- node_uuid: urn:uuid:c2b1e4a3-7dec-11d0-a765-00a0c91e6bf6
+  title: Dual-Helix Self-Improving Harness
+  content_path: research/dual_helix_harness.py
+  node_type: Python
+  status: draft
+  version_number: 1
+  epistemic_tag: experimental
+  metadata_fields:
+    epistemic_risk_level: High
+    architectural_layer: Cognitive_Core
+- node_uuid: urn:uuid:d3c2f5b4-8efd-22e1-b876-11b1d02f7cd7
+  title: Reflexion & Voyager Constraints Analysis
+  content_path: research/self_improving_architectures.md
+  node_type: Markdown
+  status: draft
+  version_number: 1
+  epistemic_tag: experimental
+  metadata_fields:
+    epistemic_risk_level: High
+    architectural_layer: Research
 - node_uuid: urn:uuid:7b0f1a1c-92b6-455b-8012-7bb605e55e09
   title: Biolux-SDL Therapeutic Framework
   content_path: pkm/biolux_sdl_framework.md
