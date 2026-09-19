@@ -69,3 +69,21 @@
 | **SDC** | Semantic Drift Coefficient. The instantaneous rate of semantic change representing latent drift. | Trigger condition $\xi \ge 0.30$ activates the heavy diagnostic suite. |
 | **ALSH** | Affective Latent Space Homeostasis. The critically damped state where the latent trajectory smoothly deforms around high-curvature topological obstacles without losing semantic velocity. | Maintained by dynamically calibrating the coupling coefficient $\beta$. |
 | **ESP** | Epistemic State Proof. A cryptographically secure, verifiable trace proving with zero-knowledge certainty that the alignment harness successfully executed its self-correction protocol. | Generated post-resolution of covert reasoning failures. |
+
+### JIT Orchestrator & Verifiable Cognition Stack (VCS)
+
+*   **Verifiable Cognition Stack (VCS)**: A multi-layered cognitive architecture that decouples high-entropy semantic planning from zero-entropy syntactic execution to enforce absolute alignment at runtime.
+*   **Manifold Alpha ($\alpha$)**: The Hollow-Core semantic planning layer, stripped of heavy tool schemas, where high-level strategic reasoning occurs at elevated temperatures.
+*   **Manifold Beta ($\beta$)**: The domain of Ephemeral JIT Micro-Agents, which run physical, state-mutating transactions within isolated context windows to prevent Context Rot.
+*   **JIT Micro-Agent**: An ephemeral, short-lived execution wrapper spawned with ultra-low latency ($\sim 3\,\mu\text{s}$) and minimal memory footprint ($\sim 6.5\,\text{KiB}$) to handle isolated tasks before autophagic destruction.
+*   **DCCD Logit-Masking**: The token-level grammar rules applied via Draft-Conditioned Constrained Decoding to project semantic drafts onto rigid Abstract Syntax Tree (AST) schemas, eliminating the Projection Tax.
+*   **Confidence-Fidelity Divergence Index (CFDI)**: A metric measuring the divergence between token-level probabilities (confidence) and schema conformance (fidelity).
+*   **Algorithmic Shame**: The state triggered when the CFDI breaches a predefined threshold (e.g., $\ge 0.15$), indicating unacceptable cognitive divergence.
+*   **Verification Co-Processor (VCP)**: An asynchronous System 2 controller that monitors the CFDI and intercepts deviant KV caches to apply corrective soft tokens.
+*   **Differentiable Cache Augmentation**: The process used by the VCP to inject pre-compiled "soft tokens" to steer a model's attention maps back onto an aligned geodesic.
+*   **SCoRe Self-Correction**: The self-repair loop governed by a strict three-attempt limit to prevent infinite thrashing and Reward Hacking.
+*   **Saga Compensating Transaction**: An immediate, non-destructive filesystem rollback triggered if the SCoRe loop fails thrice.
+*   **Symbolic Scars**: High-dimensional conceptual and compilation failures serialized and indexed to prevent recursive hallucination loops.
+*   **Scar Tissue Archive (STA)**: The persistent ledger/archive where Symbolic Scars are logged.
+*   **Failure-Informed Prompt Inversion (F-IPI)**: An engine that mutates the master constitution by prepending scars as active negative constraints, creating a mathematically repulsive force against past errors.
+*   **Justified Uncertainty Report (JUR)**: A cryptographically bound, machine-readable JSON-LD schema exported upon entering Epistemic Escrow, gracefully handing cognitive load to a human operator.

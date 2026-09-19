@@ -354,3 +354,18 @@ Self_Test:
   - Simulate a highly biased, Western-centric input and verify that the Decolonial Prompt Scaffold successfully recalibrates the output, demonstrating an increased Cultural Fidelity Index.
   - Confirm the Epistemic Escrow activates automatically when the simulated "Gaze Dominance" threshold is breached.
 ```
+
+### Part V: Verifiable Cognition Stack (VCS) & JIT Orchestrator
+
+The system incorporates a **JIT Orchestrator** architecture to decouple cognitive workloads and prevent Context Rot.
+
+#### Architecture Layers:
+1. **Hollow-Core Semantic Planning (Manifold $\alpha$)**: High-level strategic reasoning is executed at elevated temperatures in a highly compacted context stripped of heavy tool schemas.
+2. **Ephemeral JIT Micro-Agents (Manifold $\beta$)**: Physical, state-mutating transactions are executed by short-lived sub-agents with ultra-low latency ($\sim 3\,\mu\text{s}$) and minimal memory footprint ($\sim 6.5\,\text{KiB}$).
+3. **Draft-Conditioned Constrained Decoding (DCCD)**: Agents project unconstrained semantic drafts onto rigid AST schemas via token-level grammar rules, eliminating the Projection Tax.
+4. **CFDI Sensing & Verification Co-Processor (VCP)**: The system monitors token-level probabilities (Confidence-Fidelity Divergence Index). A CFDI $\ge 0.15$ triggers the VCP, which intercepts deviant caches and applies Differentiable Cache Augmentation.
+5. **SCoRe Self-Correction**: A strict three-attempt limit prevents thrashing. Repeated failures trigger a Saga Compensating Transaction to rollback the state.
+6. **Failure Metabolism (STA & F-IPI)**: Failures are serialized as Symbolic Scars in the Scar Tissue Archive (STA). The Failure-Informed Prompt Inversion (F-IPI) engine mutates the master constitution to actively repel attention weights from past errors.
+7. **Justified Uncertainty Reports (JUR)**: When in escrow, the system exports a cryptographically bound JUR to gracefully hand over the cognitive load to a human.
+
+**Simulation:** A Python-based theoretical simulation script resides at `research/jit_orchestrator_simulation.py`, demonstrating the failure loop and successful execution via Failure-Informed Prompt Inversion.
