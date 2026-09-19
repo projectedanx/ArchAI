@@ -86,3 +86,27 @@ The system implements Staged Advantage Estimation (SAE) to optimize Tree-structu
 *   **Dual-Scale Advantage Balancing**: Dynamically interpolates between $O(N)$ expectation heuristic and Formal QP Projection based on Spectral Information Discrepancy ($\Psi$).
 *   **Asynchronous Multi-Threaded ADMM Projector**: Lock-free parallel constraint solver decoupling $L_2$-norm projections from topological tree constraints.
 *   **Entropy-Weighted Advantage Recovery (EWAR)**: Mitigates "Semantic Saponification" where preference alignment collapses variance on complex manifolds by forcing scaled variance thresholds via inverse log-probability projection.
+
+## 7. Cybernetic Agentic TDD Frameworks
+The architecture integrates advanced Test-Driven Development (TDD) frameworks directly into the agentic workflow to ensure semantic correctness and alignment. These frameworks transform subjective natural language instructions into a deterministic, self-correcting, and mathematically verifiable feedback loop.
+
+### 7.1 Zero-Trust TDD Isolation (Isomorphic State Machine)
+To prevent "Sycophantic Mocking" (where an agent modifies a test to pass rather than fixing the code) and sandbox escapes, the system implements an isomorphic state graph:
+*   **Test Architect Node:** Write-access limited exclusively to test directories. Generates the initial failing test (Red Phase).
+*   **Implementer Node:** Write-access limited to application source code. Iterates on implementation until tests pass (Green Phase).
+*   **Sandboxing:** Test execution occurs in an ephemeral, zero-trust container (`gemini-cli-sandbox`) with no network access and restricted syscalls.
+*   **Documentation:** `research/zero_trust_tdd_isolation_state_machine.md`
+
+### 7.2 Parametric TDD Trade-off Analysis
+Optimizes the balance between execution velocity and alignment accuracy.
+*   **Multi-Model Cascade:** Delegates high-cognitive planning to large models (e.g., Gemini 3 Pro) and high-frequency ReAct iteration loops to faster models (e.g., Gemini 2.5 Flash).
+*   **Doom Loop Break Threshold:** Implements a hard threshold ($k_{max} = 10$) on iteration attempts to prevent token exhaustion during unresolvable build errors.
+*   **Context Compression:** Utilizes a sliding window algorithm to retain global rules (e.g., from `AGENTS.md`) while summarizing repetitive execution logs.
+*   **Documentation:** `research/parametric_tdd_tradeoff_analysis.md`
+
+### 7.3 Multimodal UI Verification Harness
+An automated, self-healing visual testing harness leveraging multimodal agents and Playwright.
+*   **Test-Driven Visual Spec:** Translates visual inputs (PDFs, sketches) into structured layout constraints and Playwright scripts.
+*   **Automated Layout Grading:** A vision model compares target specs against runtime screenshots to calculate layout deltas and propose code repairs.
+*   **Atomic Checkpoints:** Enforces filesystem snapshots before visual mutations, enabling automated rollbacks (`/restore`) if style drift or regressions occur.
+*   **Documentation:** `research/multimodal_ui_verification_harness.md`
