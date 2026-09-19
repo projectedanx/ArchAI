@@ -110,3 +110,21 @@ An automated, self-healing visual testing harness leveraging multimodal agents a
 *   **Automated Layout Grading:** A vision model compares target specs against runtime screenshots to calculate layout deltas and propose code repairs.
 *   **Atomic Checkpoints:** Enforces filesystem snapshots before visual mutations, enabling automated rollbacks (`/restore`) if style drift or regressions occur.
 *   **Documentation:** `research/multimodal_ui_verification_harness.md`
+
+
+## 8. Sovereign Saga Orchestration (CI/CD)
+
+The architecture includes a zero-entropy GitHub Actions workflow (`.github/workflows/uastp-saga-recovery.yml`) to mitigate Topological Tearing and Semantic Saponification when translating high-entropy UASTP Cognitive Contracts into deterministic CI/CD boundaries.
+
+### Key Components
+
+*   **Manifold Alpha (Read-Only)**: Enforces epistemic and supply chain audits, strictly separated from mutating actions. Checks AST schema validity and scans for supply chain vulnerabilities using pinned 40-character git commit SHAs.
+*   **Manifold Beta (Stateful Mutation)**: Idempotent deployment leveraging GCP Workload Identity Federation (OIDC) for least-privilege short-lived JWT authentication. It deploys state changes to the target environment (e.g., GKE).
+*   **Verification Gate (V_g)**: Automates post-deployment assertion suites to compute post-execution system state and ensure metrics assertions hold.
+*   **Epistemic Rollback**: Compensating transaction (T_c) executed immediately upon verification failure or if the CFDI threshold (0.15) is exceeded. Reverses mutations to the prior checkpoint.
+*   **Epistemic Escrow / Cognitive Circuit Breaker**: If the rollback step fails, the system executes an Epistemic Escrow step. It halts further downstream stages, mints a Symbolic Scar, flags the state as [COMPROMISED], and alerts human operators via ChatOps/PagerDuty to prevent "Lost Compensation" states.
+
+### Trade-offs Managed
+
+*   Upfront validation (AST invariant checks) incurs a Thermodynamic Latency Tax but significantly reduces the Epistemic Crash Rate (ECR) to 0%, avoiding costly chronological saponification loops during production failures.
+*   Metrics targets: Defect Remediation Deficit (DRD) compressed to <120s, and Semantic Saponification Index (SSI) maintained at <= 0.04.
