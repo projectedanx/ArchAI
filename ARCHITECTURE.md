@@ -62,3 +62,20 @@ This acts as a structural inversion of the "statefulness vacuum", transforming t
 *   **Sovereign YAML Specification**: `pkc_manifest.yml` dictates cryptographic node verification, neuro-symbolic meaning space anchors, and RCC-8 topological semantic edges.
 *   **Git-Anchored Pre-Commit Pipeline**: Prevents semantic drift by automatically hashing updated markdown files against the manifest via `.git/hooks/pre-commit`.
 *   **Flesh-to-Symbol Ingestion**: Background telemetry (`scripts/zotero_ingestion_loop.py`) designed to hook unstructured data (PDFs) into the strict topological graph via Llama-3 extraction pipelines (stubbed).
+
+## 5. JIT Orchestrator & Verifiable Cognition Stack (VCS)
+
+The architecture has evolved to integrate a **JIT Orchestrator** managing a **Verifiable Cognition Stack (VCS)**. This decouples the cognitive workload into distinct layers to enforce absolute alignment at runtime, addressing context rot and projection tax.
+
+### VCS Layers
+
+1.  **Hollow-Core Semantic Planning (Manifold $\alpha$)**: High-level strategic reasoning is executed freely at elevated temperatures. The orchestrator maintains a highly compacted context stripped of heavy, passive tool definitions and OpenAPI schemas, preventing the typical 16% to 50% tooling context consumption tax.
+2.  **Ephemeral JIT Micro-Agents (Manifold $\beta$)**: Physical, state-mutating transactions (e.g., codebase edits) are handled by dynamically instantiated JIT Micro-Agents. These sub-agents utilize ultra-low $\sim 3\,\mu\text{s}$ initialization latency and minimal $\sim 6.5\,\text{KiB}$ memory footprints. They isolate the tooling tax within their local context and are autophagically destroyed on a per-step basis, returning only compressed JSON summaries.
+3.  **Draft-Conditioned Constrained Decoding (DCCD)**: JIT agents apply DCCD logit-masking to project unconstrained semantic drafts onto rigid Abstract Syntax Tree (AST) schemas via token-level grammar rules, eliminating the Projection Tax.
+4.  **Verification Co-Processor (VCP) & CFDI Sensing**: The system continuously monitors token-level probabilities and schema conformance to calculate the **Confidence-Fidelity Divergence Index (CFDI)**. If CFDI breaches the **Algorithmic Shame** threshold ($\ge 0.15$), the asynchronous Verification Co-Processor (VCP) intervenes, applying **Differentiable Cache Augmentation** to inject pre-compiled corrective "soft tokens".
+5.  **SCoRe Self-Correction & Saga Compensating Transactions**: A strict three-attempt limit governs the self-repair loop to prevent thrashing and Reward Hacking. If compilation fails thrice, a Saga Compensating Transaction triggers an immediate, non-destructive filesystem rollback.
+6.  **Failure Metabolism (STA & F-IPI)**: Failed trajectories are serialized as **Symbolic Scars** in the **Scar Tissue Archive (STA)**. The **Failure-Informed Prompt Inversion (F-IPI)** engine mutates the master constitution by prepending these scars as active negative constraints, repelling attention weights from past execution errors.
+7.  **Epistemic Escrow & Justified Uncertainty Reports (JUR)**: Upon entering escrow, autonomous execution is suspended, and a cryptographically bound, machine-readable Justified Uncertainty Report (JUR) is exported, gracefully handing cognitive load back to a human operator.
+
+### Implementation Reference
+A theoretical simulation of this architecture resides in `research/jit_orchestrator_simulation.py`, demonstrating excessive schema drift, escrow gating, and immunized execution via Failure-Informed Prompt Inversion.
