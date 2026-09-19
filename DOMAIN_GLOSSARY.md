@@ -87,3 +87,15 @@
 *   **Scar Tissue Archive (STA)**: The persistent ledger/archive where Symbolic Scars are logged.
 *   **Failure-Informed Prompt Inversion (F-IPI)**: An engine that mutates the master constitution by prepending scars as active negative constraints, creating a mathematically repulsive force against past errors.
 *   **Justified Uncertainty Report (JUR)**: A cryptographically bound, machine-readable JSON-LD schema exported upon entering Epistemic Escrow, gracefully handing cognitive load to a human operator.
+
+## Autonomous Adaptive Cognitive Harness (AACH) Entities
+
+| Term | Definition | Context |
+| :--- | :--- | :--- |
+| **AACH** | Autonomous Adaptive Cognitive Harness. A hybrid control system prioritizing feed-forward discrepancy creation over reactive equilibrium to achieve purposeful adaptation. | Bounded by the Four Pillars of Specification Planning. |
+| **Edge of Chaos** | The optimal Feasibility Frontier where the AACH operates, balancing overcontrolled stagnation against dissipative instability to maximize goal attainment cycles. | - |
+| **Disequilibratory Production** | The proactive spiking of goal difficulty by the IMC feed-forward controller when system performance converges on a local peak, preventing "death by equilibrium." | Opposite of Equilibratory Reduction. |
+| **Ready-to-hand (zuhanden)** | The optimal state of a tool where it functions silently in execution without requiring explicit cognitive modeling by the system. | - |
+| **Present-at-hand (vorhanden)** | The ruptured state of a tool triggered by failure, forcing the metacognitive layer into explicit diagnostic reasoning (the as-structure). | Triggers Algorithmic Reparation. |
+| **Epistemic Action** | Actively altering the external environment (e.g., via a scratchpad) primarily to aid recognition, search, and memory offloading, rather than for direct pragmatic physical changes. | Forms a functional organ with the user under Active Externalism. |
+| **Universal Solution (J)** | The definitive target schema instance containing maximal generality ("no more and no less" data) derived via the Chase Procedure. | Evaluated via Homomorphic Equivalence ($\chi: J \to J'$). |
