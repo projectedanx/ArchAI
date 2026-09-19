@@ -369,3 +369,11 @@ The system incorporates a **JIT Orchestrator** architecture to decouple cognitiv
 7. **Justified Uncertainty Reports (JUR)**: When in escrow, the system exports a cryptographically bound JUR to gracefully hand over the cognitive load to a human.
 
 **Simulation:** A Python-based theoretical simulation script resides at `research/jit_orchestrator_simulation.py`, demonstrating the failure loop and successful execution via Failure-Informed Prompt Inversion.
+
+## Agentic TDD & Cybernetic Orchestration
+The platform embeds cybernetic **Test-Driven Development (TDD)** loops into the core agent lifecycle, enforcing semantic correctness over raw execution velocity:
+1. **Zero-Trust TDD Isolation**: An isomorphic state graph separates test creation (Test Architect) from implementation (Implementer Node), preventing "Sycophantic Mocking" within secure, ephemeral containers.
+2. **Parametric Trade-off Modeling**: Implements a Multi-Model Cascade (Gemini 3 Pro for planning, Flash for rapid ReAct loops) and rigorous "Doom Loop" breaking thresholds to optimize token usage and latency.
+3. **Multimodal UI Verification**: An automated, self-healing Playwright harness leverages vision models to interpret visual specs, grade layout deltas, and execute atomic rollbacks during UI repair loops.
+
+See the `research/` directory for mathematical formulations and technical specs.
