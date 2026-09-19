@@ -10,8 +10,14 @@ metadata:
   - http://example.org/sepao/ontology#v0.1
   - https://www.w3.org/ns/prov#
   context_hashes:
+  - research/dual_helix_harness.py:sha256-09689bf795a70b218427cbde0981d9e8704fddbc342da7aea4b32b6fcf02a76d
+  - research/self_improving_architectures.md:sha256-9c7fa85780a83248b95fb2f8d3e1f66c5c78465afaccd97f4b7150e878fedf1e
   - pkm/biolux_sdl_framework.md:sha256-32eb40c6d66509407c05713b3917779ffdaa330e8a11ea336d87fb720b363349
   - pkm/algorithmic_kintsugi.md:sha256-d41ea5bf7e679d1aa919c6d4dbb09c21d4ccb55b7de71f08d2b6af5c586a3510
+  - research/actplane_bpf_lsm.c:sha256-729e43509698e9f738685a9d81054834b31fa9001fb8fde97a30390d23bdd2d1
+  - research/sema_merkle_state_sync.md:sha256-6d1270470f762e28e0930bbcdafe18158b2c5361d70dc311790a9e8cd041e054
+  - research/actplane_ebpf_ifc_dsl.md:sha256-118b63a1f0548359fafaa75ce1f8c68b6397fc84e44e2bcfaa07556db21c4aa4
+  - research/agentspawn_metacognitive_autotuning.md:sha256-dd18ef5e8d688cd9ce554a14a5c5d50982a21bc7c153290a5a1bbfada9b683c2
 sovereignty_controls:
   privacy_default: all_private_by_default
   epistemic_humility_target: 0.9
@@ -82,6 +88,46 @@ content_nodes:
     epistemic_risk_level: High
     architectural_layer: Governance_Overlay
     implementation_horizon: Production_Ready
+- node_uuid: urn:uuid:a2ee2742-e6cb-4519-b814-dc0364d3c123
+  title: ActPlane eBPF Kernel Constraints
+  content_path: research/actplane_bpf_lsm.c
+  node_type: C
+  status: draft
+  version_number: 1
+  epistemic_tag: experimental
+  metadata_fields:
+    epistemic_risk_level: High
+    architectural_layer: Security_Kernel
+- node_uuid: urn:uuid:b8a7202b-ac09-4e21-a24a-daac8fcee507
+  title: Verifiable State Sync via SEMA-Merkle Trees
+  content_path: research/sema_merkle_state_sync.md
+  node_type: Markdown
+  status: draft
+  version_number: 1
+  epistemic_tag: experimental
+  metadata_fields:
+    epistemic_risk_level: High
+    architectural_layer: Cognitive_Core
+- node_uuid: urn:uuid:80710792-5199-48b7-9104-0d0f1b12d4b1
+  title: ActPlane eBPF IFC DSL Synthesis
+  content_path: research/actplane_ebpf_ifc_dsl.md
+  node_type: Markdown
+  status: draft
+  version_number: 1
+  epistemic_tag: experimental
+  metadata_fields:
+    epistemic_risk_level: High
+    architectural_layer: Security_Kernel
+- node_uuid: urn:uuid:47dce9e9-b625-4559-9405-52ee26128a6a
+  title: AgentSpawn Metacognitive Auto-Tuning
+  content_path: research/agentspawn_metacognitive_autotuning.md
+  node_type: Markdown
+  status: draft
+  version_number: 1
+  epistemic_tag: experimental
+  metadata_fields:
+    epistemic_risk_level: High
+    architectural_layer: Research
 semantic_edges:
 - edge_uuid: urn:uuid:1a2b3c4d-5e6f-7a8b-9c0d-123456789abc
   source_node: urn:uuid:9e01f112-c2b1-49e0-811c-2200a0cfb2e1
