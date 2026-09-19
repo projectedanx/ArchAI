@@ -245,6 +245,16 @@ function App() {
         
         let cfdiScore = 0;
         if (state.escrowEnabled) {
+
+            // --- VCP Gating Simulation ---
+            const simulatedSDC = Math.random(); // Mock Semantic Drift Coefficient
+            if (simulatedSDC >= 0.30) {
+                addAuditLog('VCP Intervention', `High semantic drift detected (SDC: ${simulatedSDC.toFixed(2)}). Engaging Differentiable Cache Augmentation.`, 'System');
+                await new Promise(resolve => setTimeout(resolve, 500)); // Simulate delay
+                addAuditLog('ALSH Restored', 'Cache augmentation complete. Resuming feedforward pass.', 'System');
+            }
+            // -----------------------------
+
             cfdiScore = await evaluateCFDI(state.goal, response, currentHistory);
         }
 

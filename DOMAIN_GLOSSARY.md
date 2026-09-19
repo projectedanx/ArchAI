@@ -56,3 +56,16 @@
 | **Shared Persistence Trap** | An anti-pattern where BFFs directly write to a database, bypassing downstream API bounds. | Violates Bounded Context isolation. |
 | **Gateway Sinkhole** | A failure cascade where an unprotected gateway thread pool is exhausted by a failing downstream microservice. | Requires Circuit Breaker and Bulkhead Isolation. |
 | **Contract Robustness Index** | A metric evaluating a BFF's ability to gracefully degrade functionality under downstream contract drift. | Calculated via automated AI mutation testing. |
+
+## Latent Reasoning & Verification Control
+
+| Term | Definition | Context |
+| :--- | :--- | :--- |
+| **VCP** | Verification Co-Processor. An asynchronous, offline System 2 controller that ingests deviant KV-cache states and compiles continuous geometric recovery plans via Differentiable Cache Augmentation. | Critical for ALSH homeostasis. |
+| **Differentiable Cache Augmentation** | The process of directly appending corrective latent embeddings ($\vec{e}_{rec}$) to the primary model's active KV-cache to steer its latent trajectory. | Executed by the actuator layer post-VCP optimization. |
+| **SAM** | Symbolic Anchor Subsystem. Provides the Target Anchor ($V_{anc}$), a stable, human-verified coordinates vector representing core mission boundaries. | Guides VCP latent space optimization. |
+| **DLM** | Differentiable Logic Manifold. Translates discrete Boolean constraints and safety rules into continuous, differentiable potential barriers. | Acts as a regularizer during VCP gradient sweeps. |
+| **MRS** | Mutation Recoverability Score. Metric measuring the ability of the augmented cache to return the primary model to its stable attractor basin after systematic input perturbations. | Must be $\ge 0.80$ for Soft Targets. |
+| **SDC** | Semantic Drift Coefficient. The instantaneous rate of semantic change representing latent drift. | Trigger condition $\xi \ge 0.30$ activates the heavy diagnostic suite. |
+| **ALSH** | Affective Latent Space Homeostasis. The critically damped state where the latent trajectory smoothly deforms around high-curvature topological obstacles without losing semantic velocity. | Maintained by dynamically calibrating the coupling coefficient $\beta$. |
+| **ESP** | Epistemic State Proof. A cryptographically secure, verifiable trace proving with zero-knowledge certainty that the alignment harness successfully executed its self-correction protocol. | Generated post-resolution of covert reasoning failures. |
