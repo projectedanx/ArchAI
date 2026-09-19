@@ -79,3 +79,10 @@ The architecture has evolved to integrate a **JIT Orchestrator** managing a **Ve
 
 ### Implementation Reference
 A theoretical simulation of this architecture resides in `research/jit_orchestrator_simulation.py`, demonstrating excessive schema drift, escrow gating, and immunized execution via Failure-Informed Prompt Inversion.
+
+
+### 5. Staged Advantage Estimation (SAE)
+The system implements Staged Advantage Estimation (SAE) to optimize Tree-structured Off-policy Optimization (Tree-OPO) when parsing hierarchical agent completion paths.
+*   **Dual-Scale Advantage Balancing**: Dynamically interpolates between $O(N)$ expectation heuristic and Formal QP Projection based on Spectral Information Discrepancy ($\Psi$).
+*   **Asynchronous Multi-Threaded ADMM Projector**: Lock-free parallel constraint solver decoupling $L_2$-norm projections from topological tree constraints.
+*   **Entropy-Weighted Advantage Recovery (EWAR)**: Mitigates "Semantic Saponification" where preference alignment collapses variance on complex manifolds by forcing scaled variance thresholds via inverse log-probability projection.
