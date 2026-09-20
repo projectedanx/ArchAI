@@ -139,3 +139,13 @@ The architecture includes a zero-entropy GitHub Actions workflow (`.github/workf
 
 *   Upfront validation (AST invariant checks) incurs a Thermodynamic Latency Tax but significantly reduces the Epistemic Crash Rate (ECR) to 0%, avoiding costly chronological saponification loops during production failures.
 *   Metrics targets: Defect Remediation Deficit (DRD) compressed to <120s, and Semantic Saponification Index (SSI) maintained at <= 0.04.
+
+## PEACE Meta-Architecture & Cognitive Decoupling
+
+The architecture bridges the "Thought-Action Gap" in LLMs, resolving the cognitive decoupling between Literal Theory of Mind (descriptive forecasting) and Functional Theory of Mind (adaptive execution).
+
+### The Four Pillars of Specification Planning
+1. **Automated Discovery and Constraint Mining**: Defines hard architectural boundaries like the "Deliberation Penalty" (forcing a flat CoT scaffold inducing reasoning hallucinations) and the "Predict-Then-Optimize Bottleneck", and optimizes for Epistemic Targets minimizing step-wise regret.
+2. **Isomorphic Formalization**: Uses the BDI State Transition Matrix and Dynamic Context Trees (ReCAP) to prevent mental state decoupling and manage recursive execution via Downward Decomposition and Upward Backtracking.
+3. **Parametric Trade-off Modeling**: Balances Context Window vs KV Cache Overhead, Divergence Functions in Distillation via Mechanistic Circuit Distillation (CKA loss), and the Decoupled vs Embodied ToM Trade-off.
+4. **Continuous Falsification**: Employs Edge-Case Stress Testing against the "Nash Trap" (Rock, Paper, Scissors) and the "Sussman/Burger Anomaly" (Blocked Station Deadlock) to ensure adaptive replanning in long-horizon environments.

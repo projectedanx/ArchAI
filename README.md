@@ -383,3 +383,11 @@ The platform embeds cybernetic **Test-Driven Development (TDD)** loops into the 
 3. **Multimodal UI Verification**: An automated, self-healing Playwright harness leverages vision models to interpret visual specs, grade layout deltas, and execute atomic rollbacks during UI repair loops.
 
 See the `research/` directory for mathematical formulations and technical specs.
+
+### Epistemic Cognitive Harness (PEACE)
+Operationalizing the PEACE Meta-Architecture to decouple intuitive generation from logical validation:
+1. **Retrieval Module**: Extracts task-relevant contextual priors.
+2. **Cognition Module (System 1)**: Generates fast associative heuristic hypotheses.
+3. **Control Module (System 2)**: Intercepts outputs, parses BDI logical propositions, and evaluates them against constraints via Symbolic Verification before authorizing execution.
+4. **Action Module**: Executes authorized primitive commands.
+5. **Memory Module**: Dynamically manages state using a sliding window and ReCAP Context Tree to prevent context drift.
