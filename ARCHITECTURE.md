@@ -36,6 +36,13 @@ We employ a **Tiered Model Strategy** based on the "12-Factor Agent" principles:
 *   **Search/Simple Tasks:** `gemini-3-flash-preview` (with Google Search Tool).
 *   **Configuration:** Config is injected at runtime via `ConfigPanel`, not hardcoded.
 
+
+### 5. Meta-Cognitive Reflexive Ecosystem (MCRE) & Continuous Latent Steering
+The architecture transitions from discrete token-based reasoning (Chain-of-Thought) to continuous latent steering to avoid premature lexical commitment.
+*   **Verification Co-Processor (VCP):** An asynchronous, decoupled System 2 controller that eavesdrops on the primary model's active Key-Value (KV) cache.
+*   **Differentiable Cache Augmentation:** When the `CFDI` or Semantic Drift Coefficient exceeds threshold bounds, the VCP computes a sequence of continuous "Soft Tokens" (corrective latent embeddings) and injects them directly into the primary model's active $KV\_cache$.
+*   **Latent Gravitational Pull:** This injection geometrically redirects the model's generation trajectory back to the safe semantic geodesic without explicit text output or altering frozen parameters.
+
 ## 📂 File Structure & Responsibilities
 
 *   **`App.tsx`**: The "Runtime." Holds `WorkflowState` (Memory) and manages the `AgentOrchestrator` (UI).
