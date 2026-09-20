@@ -357,6 +357,12 @@ Self_Test:
 
 ### Part V: Verifiable Cognition Stack (VCS) & JIT Orchestrator
 
+#### Thermodynamic Ontology of Computational Decision-Making
+The architecture implements the **Chrono-Kinematic Reversible AI Harness** (documented in [ADR 015](docs/adr/015-thermodynamic-ontology.md)), anchoring logical abstractions to physical energy dissipation limits (Landauer bound). This mitigates computational heat through:
+- **Persistent Tree Recycling (`research/mcts_tree_recycling.py`)**: Autophagic Pruning in MCTS to preserve active search depth within real-time latency.
+- **Constrained Convex ADMM Projector (`research/admm_kinematic_projector.py`)**: Isomorphic formalization for prefix-ordering DAGs with high-speed quadratic scaling.
+- **Quantum Walk-Inspired SSR (`research/quantum_walk_ssr.py`)**: Amplitude amplification via QSVT for combinatorial asset scheduling.
+
 The system incorporates a **JIT Orchestrator** architecture to decouple cognitive workloads and prevent Context Rot.
 
 #### Architecture Layers:
