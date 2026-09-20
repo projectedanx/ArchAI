@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 import time
-from .staged_advantage_estimation import TreeOPOGroup
+from staged_advantage_estimation import TreeOPOGroup
 
 class TestStagedAdvantageEstimation(unittest.TestCase):
     def setUp(self):
