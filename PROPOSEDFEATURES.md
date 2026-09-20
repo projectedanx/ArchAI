@@ -54,3 +54,20 @@
 
 *   **Scar Ingestion:** Captures architectural post-mortems and derives hard, anti-fragility negative constraints.
 *   **Stare Decisis Enforced Blockers:** Automatically rejects paths that mirror historical failures and alerts the agent with the contextual rationale.
+
+## 10. Action-Alignment Loss Research Tracks
+
+### 10.1 Mechanistic Lookback Circuit Alignment and Distillation
+*   **Domain:** Mechanistic Interpretability, Activation Engineering, and Model Compression.
+*   **Task:** Synthesize an automated training pipeline that performs **Circuit Distillation** to transfer the causal belief-tracking "lookback circuit" from an unaligned teacher model into a smaller student model, directly mitigating the thought-action gap.
+*   **Experimental Setup:** Utilize path-patching to isolate attention heads responsible for binding lookback and answer lookback. Distill representations using a composite objective combining task loss and Centered Kernel Alignment (CKA) loss.
+
+### 10.2 Closed-Loop ReCAP with BDI Symbolic Logic Verification
+*   **Domain:** Cognitive Agent Architectures, Answer Set Programming (ASP), and Epistemic Governance.
+*   **Task:** Design and implement a closed-loop neuro-symbolic agent execution harness that wraps a frontier LLM inside a formal Belief-Desire-Intention (BDI) engine to eliminate "predictive-behavioral decoupling".
+*   **Experimental Setup:** Partition in-context reasoning into distinct `#Beliefs`, `#Desires`, and `#Intentions` blocks. Continually parse propositions into Answer Set Programming rules, using a symbolic solver (e.g., Clingo) as a metacognitive guardrail to veto token generation if proposed neural actions violate game-theoretic optimal responses.
+
+### 10.3 Epistemic Sponge Mitigation via Active Bayes Risk Probing in POMDPs
+*   **Domain:** Post-Training RL Alignment, Robust Evaluation, and Active Learning.
+*   **Task:** Implement an interactive reinforcement learning evaluation harness based on Sequential Inverse Plan Search (SIPS) to model the "expectation-realization gap" under high model-uncertainty and partial observability.
+*   **Experimental Setup:** Construct a POMDP gridworld model. Implement an active learning controller that calculates immediate Bayes Risk. Require the agent to halt autonomous execution and issue meta-queries to human principals when Bayes Risk exceeds a defined threshold, preserving assumed partner rationality parameters.

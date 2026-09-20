@@ -88,6 +88,10 @@ The architecture has evolved to integrate a **JIT Orchestrator** managing a **Ve
 A theoretical simulation of this architecture resides in `research/jit_orchestrator_simulation.py`, demonstrating excessive schema drift, escrow gating, and immunized execution via Failure-Informed Prompt Inversion.
 
 
+### 5.5 Action-Alignment Loss (Regret Minimization)
+To mathematically resolve the "thought-action gap" in sequential game-theoretic interactions, the architecture incorporates a differentiable **Action-Alignment Loss** module. This loss function forces the agent's execution policy (Head B) to align with the optimal Best Response calculated from its predictive ToM module (Head A). By utilizing a Boltzmann Best-Response Approximation (LogSumExp), the module preserves dense gradient flow across non-stationary opponent models while deterministically preventing conservative Nash collapse.
+*   **Implementation:** `research/action_alignment_loss.py`
+
 ### 5. Staged Advantage Estimation (SAE)
 The system implements Staged Advantage Estimation (SAE) to optimize Tree-structured Off-policy Optimization (Tree-OPO) when parsing hierarchical agent completion paths.
 *   **Dual-Scale Advantage Balancing**: Dynamically interpolates between $O(N)$ expectation heuristic and Formal QP Projection based on Spectral Information Discrepancy ($\Psi$).
