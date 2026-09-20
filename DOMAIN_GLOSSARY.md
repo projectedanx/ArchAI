@@ -99,3 +99,16 @@
 | **Present-at-hand (vorhanden)** | The ruptured state of a tool triggered by failure, forcing the metacognitive layer into explicit diagnostic reasoning (the as-structure). | Triggers Algorithmic Reparation. |
 | **Epistemic Action** | Actively altering the external environment (e.g., via a scratchpad) primarily to aid recognition, search, and memory offloading, rather than for direct pragmatic physical changes. | Forms a functional organ with the user under Active Externalism. |
 | **Universal Solution (J)** | The definitive target schema instance containing maximal generality ("no more and no less" data) derived via the Chase Procedure. | Evaluated via Homomorphic Equivalence ($\chi: J \to J'$). |
+
+
+### MCRE (Meta-Cognitive Reflexive Ecosystem)
+A cognitive architecture paradigm utilizing continuous, differentiable steering within a model's high-dimensional latent space, rather than relying on discrete, lossy text tokens (e.g., standard Chain-of-Thought). It leverages Soft Tokens to execute a latent breadth-first search and avoid premature lexical commitment.
+
+### Soft Tokens (Continuous Thought Vectors)
+Continuous latent embeddings injected directly into the neural network's residual stream or KV-Cache. They bypass discrete tokenization, allowing a single vector to maintain a superposition of multiple potential reasoning paths.
+
+### VCP (Verification Co-Processor)
+An asynchronous, decoupled System 2 "controller" that continuously monitors the primary model's active Key-Value (KV) cache. When epistemic anomalies (e.g., CFDI > 0.42) are detected, the VCP computes corrective soft-token sequences to steer the semantic trajectory back to homeostasis.
+
+### Differentiable Cache Augmentation
+The actuation mechanism for the VCP. Corrective soft-token latent embeddings are injected (appended) directly into the primary model's active $KV\_cache$. This exerts a geometric "gravitational pull" on attention heads without modifying the base model's frozen parameters or interrupting output text generation.
