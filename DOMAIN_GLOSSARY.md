@@ -26,6 +26,10 @@
 
 | Term | Definition | Context |
 | :--- | :--- | :--- |
+| **Parsimonious Architecture Protocol (PAP)** | Implementation of Occam's Razor for automated scientific reasoning, comprising Ontological Commitment Engine, Occam Loss Compiler, Pareto Optimization, and Falsification Unit. | Used for deterministic theory selection. |
+| **Occam Loss Compiler** | Component of PAP that computes a complexity score derived from parameter dimensionality and assumption-dependence paths. | Penalizes over-fitting. |
+| **Bayesian Model Reduction (BMR)** | Process that minimizes complexity (KL divergence) while preserving necessary accuracy; acts as an active pruning architecture for reasoning chains. | Translates to self-consolidation loops. |
+| **Dimensionality Collapse** | Process of simplifying an imported mathematical model to its simplest adequate form using formal boundaries during model travel. | Used by the Interdisciplinary Model Travel Auditor. |
 | **Betti-1 Loop** | A topological cycle in a dependency graph indicating a circular dependency deadlock. | Detected via DFS cycle detection in IMPORTS subgraph. |
 | **Draft-Conditioned Constrained Decoder (DCCD)** | The validation layer enforcing the LSP 3.17 schema at the generation boundary. | Must validate prior to JSON-RPC payload emission. |
 | **CFDI** | Confidence-Fidelity Divergence Index. Measures the variance between agent proposals. | `CFDI > 0.15` triggers Epistemic Escrow. |

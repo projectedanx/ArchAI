@@ -43,6 +43,14 @@ The architecture transitions from discrete token-based reasoning (Chain-of-Thoug
 *   **Differentiable Cache Augmentation:** When the `CFDI` or Semantic Drift Coefficient exceeds threshold bounds, the VCP computes a sequence of continuous "Soft Tokens" (corrective latent embeddings) and injects them directly into the primary model's active $KV\_cache$.
 *   **Latent Gravitational Pull:** This injection geometrically redirects the model's generation trajectory back to the safe semantic geodesic without explicit text output or altering frozen parameters.
 
+
+### 6. Parsimonious Architecture Protocol (PAP) & Epistemic Gating
+Alongside the Verification Co-Processor (VCP), the system integrates the **Parsimonious Architecture Protocol (PAP)** to enforce Occam's Razor in theory selection and model validation.
+*   **Ontological Commitment Engine:** Binds competing logical graphs (DAGs) to empirical variables.
+*   **Occam Loss Compiler:** Evaluates theories based on the structural complexity penalty matching the Bayesian marginal likelihood, rejecting epicyclic logic in favor of parameter-minimal solutions.
+*   **Bayesian Model Reduction (BMR):** Actively prunes the reasoning chain to consolidate verbose logic into parsimonious fictive principles, combating cognitive bloat.
+*   **Interdisciplinary Model Travel Auditor:** Stress-tests target-system invariants using Dimensionality Collapse, explicitly generating a Modus Tollens falsification path when assumptions (e.g., frictionless_plane) clash with the target environment (e.g., sandpaper_surface).
+
 ## 📂 File Structure & Responsibilities
 
 *   **`App.tsx`**: The "Runtime." Holds `WorkflowState` (Memory) and manages the `AgentOrchestrator` (UI).
