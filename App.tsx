@@ -69,6 +69,10 @@ const INITIAL_STATE: WorkflowState = {
     Style: PERSONAS.Style[0].id,
     Sovereign: PERSONAS.Sovereign[0].id,
     Cartographer: PERSONAS.Cartographer[0].id,
+    ProjectManager: PERSONAS.ProjectManager[0].id,
+    DevRel: PERSONAS.DevRel[0].id,
+    ProjectManager: PERSONAS.ProjectManager[0].id,
+    DevRel: PERSONAS.DevRel[0].id,
   },
   deepThinkingEnabled: false,
   webSearchEnabled: false,
@@ -78,6 +82,7 @@ const INITIAL_STATE: WorkflowState = {
     scarRegistry: [],
   messages: [],
   finalPlan: null,
+  dccdPending: null,
   diffMetrics: [],
   isProcessing: false,
   driftTimeline: HISTORICAL_DRIFT,
@@ -215,10 +220,13 @@ function App() {
         { role: 'Style', isRebuttal: false },
         { role: 'Sovereign', isRebuttal: false }, 
         { role: 'Cartographer', isRebuttal: false },
+        { role: 'DevRel', isRebuttal: false },
         // Recursive Phase
         { role: 'Planner', isRebuttal: true },
         { role: 'Security', isRebuttal: true },
-        { role: 'Sovereign', isRebuttal: true }
+        { role: 'Sovereign', isRebuttal: true },
+        { role: 'DevRel', isRebuttal: true },
+        { role: 'ProjectManager', isRebuttal: true }
       ];
 
       let currentHistory = "";

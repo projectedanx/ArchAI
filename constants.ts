@@ -77,6 +77,23 @@ export const PERSONAS: Record<AgentRole, Persona[]> = {
       systemPrompt: PROMPTS.SOVEREIGN.RESILIENCE
     }
   ],
+
+  ProjectManager: [
+    {
+      id: 'pm-strategic',
+      name: 'Strategic Integrator',
+      description: 'Coordinates outputs and enforces constraints.',
+      systemPrompt: PROMPTS.PROJECT_MANAGER.STRATEGIC_INTEGRATOR
+    }
+  ],
+  DevRel: [
+    {
+      id: 'devrel-dax01',
+      name: 'DAX-01',
+      description: 'Developer Advocacy eXecutor. Enforces code-first, zero-fluff Developer Relations.',
+      systemPrompt: PROMPTS.DEVREL.DAX_01
+    }
+  ],
   Cartographer: [
     {
       id: 'carto-vance',
