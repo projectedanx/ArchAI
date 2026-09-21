@@ -6,7 +6,7 @@
 ## 🚦 Current Status
 **Phase:** AACH_Integration (Purposeful Adaptation Phase)
 **Active Workflow:** Dynamic Recursive Loop + Domain-Native Operators (Stare Decisis, DDx) + DCCD 15/85 Schema Inversion + Epistemic Escrow EscaIation + Verification Co-Processor (VCP) + Differentiable Cache Augmentation
-**Last Update:** Integrated Collaborative Cognition (IKEA Effect) via ADR-017, Chaos Falsification Engine, and SMM Stability modeling. Integrated Autonomous Adaptive Cognitive Harness (AACH) frameworks including Homomorphic Schema Compiler, Epistemic Action Orchestrator, and Disequilibratory Goal Engine simulations (ADR-014). Integrated Verifiable Cognition Stack (VCS) and JIT Orchestrator simulation script. Integrated Rheological Controllers (ADR-012), Epistemic Composting, and Sovereign Governance frameworks including `AGENTS.md` and `DOMAIN_GLOSSARY.md` for deterministic metrology. Epistemic Escrow and DCCD codified in ADRs 005 & 006. Action-Alignment Loss codified in ADR-016. Integrated VCP (ADR-013) enforcing REFLX_IDE HARNESS SPECIFICATION V2.4.
+**Last Update:** Integrated Collaborative Cognition (IKEA Effect) via ADR-017, Chaos Falsification Engine, and SMM Stability modeling. Integrated Autonomous Adaptive Cognitive Harness (AACH) frameworks including Homomorphic Schema Compiler, Epistemic Action Orchestrator, and Disequilibratory Goal Engine simulations (ADR-014). Integrated Verifiable Cognition Stack (VCS) and JIT Orchestrator simulation script. Integrated Chrono-Topological Governance Agent (CTGA) for Betti-1 loop tracking. Integrated Rheological Controllers (ADR-012), Epistemic Composting, and Sovereign Governance frameworks including `AGENTS.md` and `DOMAIN_GLOSSARY.md` for deterministic metrology. Epistemic Escrow and DCCD codified in ADRs 005 & 006. Action-Alignment Loss codified in ADR-016. Integrated VCP (ADR-013) enforcing REFLX_IDE HARNESS SPECIFICATION V2.4.
 **Recent Shift:** Instantiated VANCE CFRSG topological indexing paradigm (ADR-007) and Symbiotic Isomorphism Tracking for Human-AI collaboration (ADR-008). Synthesized Edge-Tier Gateways & BFF Taxonomy (ADR-010) enforcing SCAR-GATEWAY-DECOUPLE and SCAR-BFF-BINDING invariants. Synthesized Reflexive Repair Loop (ADR-011) enforcing Generative Ratchet and LVR injection. Synthesized Cybernetic Agentic TDD Frameworks including Zero-Trust Isolation, Parametric Trade-offs, and Multimodal UI Verification.
 
 ## 🏗️ Critical Infrastructure (DO NOT DELETE OR SIMPLIFY)
@@ -15,6 +15,7 @@ The following files contain core logic that must be preserved during any refacto
 
 | File Path | Complexity | Critical Logic / Functions | Risk of Regression |
 | :--- | :--- | :--- | :--- |
+| **`research/ctga_topological_tracking.ts`** | 🟡 Medium | CTGA, RTA, Zigzag Persistent Homology tracking. | Medium. Protects against circular reasoning loops in MAS. |
 | **`docs/adr/010-edge-tier-bff-taxonomy.md`** | 🟡 Medium | BFF vs API Gateway topological bounds. | Medium. Protects against UI rendering logic drift in gateways. |
 | **`docs/adr/011-reflexive-repair-loop.md`** | 🔴 High | Reflexive Repair Loop, LVR, F-IPI. | High. Protects against stochastic agent volatility. |
 | **`docs/adr/012-rheological-controller.md`** | 🔴 High | VVP, RMS, Epistemic Composting. | High. Enforces deterministic execution boundaries. |
