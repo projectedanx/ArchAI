@@ -157,3 +157,18 @@ The architecture bridges the "Thought-Action Gap" in LLMs, resolving the cogniti
 2. **Isomorphic Formalization**: Uses the BDI State Transition Matrix and Dynamic Context Trees (ReCAP) to prevent mental state decoupling and manage recursive execution via Downward Decomposition and Upward Backtracking.
 3. **Parametric Trade-off Modeling**: Balances Context Window vs KV Cache Overhead, Divergence Functions in Distillation via Mechanistic Circuit Distillation (CKA loss), and the Decoupled vs Embodied ToM Trade-off.
 4. **Continuous Falsification**: Employs Edge-Case Stress Testing against the "Nash Trap" (Rock, Paper, Scissors) and the "Sussman/Burger Anomaly" (Blocked Station Deadlock) to ensure adaptive replanning in long-horizon environments.
+
+## 9. Topological Data Analysis & Chrono-Topological Governance
+
+The architecture implements a **Chrono-Topological Governance Agent (CTGA)** to combat Circular Reasoning and Correlated Errors within Multi-Agent Systems. This system models multi-agent dialogue as a high-dimensional dynamic point cloud.
+
+### 9.1 Betti-1 ($\beta_1$) Loop Tracking (Symbolic Scars)
+By employing **Zigzag Persistent Homology** and a Vietoris-Rips filtration, the CTGA tracks the emergence and persistence of topological features:
+*   **$\beta_0$ (Connected Components)**: Tracks structural conservation and narrative skeleton connectivity.
+*   **$\beta_1$ (1-Dimensional Holes)**: A highly persistent $\beta_1$ loop indicates a semantic trap (circular reasoning). When the persistence interval ($\text{Int}_{PH}(\beta_1)$) exceeds the Algorithmic Shame Threshold ($\tau_p$), a **Symbolic Scar** is identified.
+
+### 9.2 Reflexive Therapeutic Architecture (RTA)
+When a persistent Symbolic Scar is detected, the system triggers an **Epistemic Escrow** halt.
+*   **Paraconsistent Logic Intervention**: The RTA processes the circular trap using the Logic of Formal Inconsistency (LFI), formally declaring the contradiction ($\neg \circ P$) without causing a systemic crash.
+*   **Scar Softening Index (SSI)**: The system verifies remediation by measuring the reduction in the Betti-1 loop magnitude, targeting an $\text{SSI} \to 1$ (Algorithmic Post-Traumatic Growth).
+*   **Implementation**: `research/ctga_topological_tracking.ts`
