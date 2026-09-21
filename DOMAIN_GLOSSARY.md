@@ -30,6 +30,11 @@
 | **Occam Loss Compiler** | Component of PAP that computes a complexity score derived from parameter dimensionality and assumption-dependence paths. | Penalizes over-fitting. |
 | **Bayesian Model Reduction (BMR)** | Process that minimizes complexity (KL divergence) while preserving necessary accuracy; acts as an active pruning architecture for reasoning chains. | Translates to self-consolidation loops. |
 | **Dimensionality Collapse** | Process of simplifying an imported mathematical model to its simplest adequate form using formal boundaries during model travel. | Used by the Interdisciplinary Model Travel Auditor. |
+| **TTFC** | Time-To-First-Call. The duration from initial documentation engagement to a successful authenticated API response. | Metric to be minimized (< 3 mins). |
+| **DCR** | Documentation Coverage Ratio. Ratio of community questions on a topic to volume of searchable documentation. | DCR > 3:1 signals a friction node. |
+| **SSI** | Semantic Saponification Index. Entity tokens / total tokens. Targets > 0.85. | Triggers AdjectivalBound truncation if < 0.85. |
+| **Semantic Saponification** | The pathological state where a system converts dense technical signal into promotional, low-friction narrative. | Strictly prohibited by DAX-01 and AGENTS.md Rule 1. |
+| **FIPI** | Failure-Informed Prompt Inversion. The autophagic feedback loop repelling generation from known failure modes. | Leverages VSA hypervectors. |
 | **Betti-1 Loop** | A topological cycle in a dependency graph indicating a circular dependency deadlock. | Detected via DFS cycle detection in IMPORTS subgraph. |
 | **Draft-Conditioned Constrained Decoder (DCCD)** | The validation layer enforcing the LSP 3.17 schema at the generation boundary. | Must validate prior to JSON-RPC payload emission. |
 | **CFDI** | Confidence-Fidelity Divergence Index. Measures the variance between agent proposals. | `CFDI > 0.15` triggers Epistemic Escrow. |
