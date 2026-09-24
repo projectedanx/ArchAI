@@ -14,7 +14,7 @@ metadata:
   - research/self_improving_architectures.md:sha256-9c7fa85780a83248b95fb2f8d3e1f66c5c78465afaccd97f4b7150e878fedf1e
   - pkm/biolux_sdl_framework.md:sha256-32eb40c6d66509407c05713b3917779ffdaa330e8a11ea336d87fb720b363349
   - pkm/algorithmic_kintsugi.md:sha256-d41ea5bf7e679d1aa919c6d4dbb09c21d4ccb55b7de71f08d2b6af5c586a3510
-  - research/actplane_bpf_lsm.c:sha256-729e43509698e9f738685a9d81054834b31fa9001fb8fde97a30390d23bdd2d1
+  - research/actplane_bpf_lsm.c:sha256-e1315d921897e589778e5f2045f501c795e4391c99918516597e5ebf61ce3ea7
   - research/sema_merkle_state_sync.md:sha256-6d1270470f762e28e0930bbcdafe18158b2c5361d70dc311790a9e8cd041e054
   - research/actplane_ebpf_ifc_dsl.md:sha256-118b63a1f0548359fafaa75ce1f8c68b6397fc84e44e2bcfaa07556db21c4aa4
   - research/agentspawn_metacognitive_autotuning.md:sha256-dd18ef5e8d688cd9ce554a14a5c5d50982a21bc7c153290a5a1bbfada9b683c2

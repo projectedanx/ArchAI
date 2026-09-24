@@ -66,6 +66,16 @@
 | **Gateway Sinkhole** | A failure cascade where an unprotected gateway thread pool is exhausted by a failing downstream microservice. | Requires Circuit Breaker and Bulkhead Isolation. |
 | **Contract Robustness Index** | A metric evaluating a BFF's ability to gracefully degrade functionality under downstream contract drift. | Calculated via automated AI mutation testing. |
 
+## Lattice Breaker Governance
+
+| Term | Definition | Context |
+| :--- | :--- | :--- |
+| **Lattice Breaker Breach** | A critical boundary transition where an agent’s trajectory crosses into the high-risk domain (Score $\ge$ 0.8) of the Soft Permission vs. Functional Misuse Lattice. | Triggers Gated Checkpoint Halt. |
+| **Misuse-as-Process** | Actions that are technically authorized individually, but their sequence, context, and intent constitute a malicious or non-compliant process. | Identified via multidimensional action vectors. |
+| **Gated Checkpoint** | A synchronous, blocking validation mechanism that intercepts the agent’s execution thread *before* the proposed action is dispatched. | Contains blast radius and prevents irreversible modifications. |
+| **Ontological Traceback** | The reconstruction of the semantic path traversed by the agent across the ontology, mapping the sequence of Plugin $\rightarrow$ Function $\rightarrow$ Parameter nodes. | Replaces flat, text-based logs for triage. |
+| **Containment Surface Index (CSI)** | A verification metric measuring the percentage of downstream systems successfully isolated from a compromised upstream agent. | Must equal 1.0 under simulated exploit injections. |
+
 ## Latent Reasoning & Verification Control
 
 | Term | Definition | Context |

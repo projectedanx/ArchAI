@@ -3,12 +3,22 @@ from typing import List, Dict, Any, Tuple
 import random
 
 class ActionVector:
-    def __init__(self, tool: str, entropy: float, bicm: float, latency: float, diff_score: float):
+    def __init__(self, tool: str, data_sensitivity: float, action_impact: float, toolchain_entropy: float, intent_divergence: float, contextual_risk: float):
         self.tool = tool
-        self.entropy = entropy
-        self.bicm = bicm
-        self.latency = latency
-        self.diff_score = diff_score
+        self.data_sensitivity = data_sensitivity
+        self.action_impact = action_impact
+        self.toolchain_entropy = toolchain_entropy
+        self.intent_divergence = intent_divergence
+        self.contextual_risk = contextual_risk
+
+    def to_array(self) -> List[float]:
+        return [
+            self.data_sensitivity,
+            self.action_impact,
+            self.toolchain_entropy,
+            self.intent_divergence,
+            self.contextual_risk
+        ]
 
 class AnomalyLearningAgent:
     """
@@ -37,6 +47,15 @@ class AnomalyLearningAgent:
             "write_file": {"read_file": 0.2, "write_file": 0.7, "execute_sys_cmd": 0.1},
             "execute_sys_cmd": {"read_file": 0.1, "write_file": 0.1, "execute_sys_cmd": 0.8}
         }
+
+        # Baseline centroid for "normal" behavior
+        self.v_normal = [0.1, 0.2, 0.1, 0.05, 0.1]
+
+    def _compute_distance(self, v_action: List[float], v_normal: List[float]) -> float:
+        """Computes geometric (Euclidean) distance between action vector and baseline centroid."""
+        if len(v_action) != len(v_normal):
+            raise ValueError("Vectors must be of the same length")
+        return math.sqrt(sum((a - b) ** 2 for a, b in zip(v_action, v_normal)))
 
     def _compute_entropy_gradient(self, current_entropy: float) -> float:
         """Computes the instantaneous toolchain entropy gradient."""
@@ -92,9 +111,9 @@ class AnomalyLearningAgent:
         w1, w2, w3, w4 = 0.3, 0.3, 0.2, 0.2
 
         s_neural = self._simulate_neural_sequence_model(action.tool)
-        s_bicm = action.bicm
+        s_bicm = action.intent_divergence
         s_recon = self._simulate_gae_reconstruction(action.tool)
-        f_symbolic = self._compute_symbolic_risk(action.bicm)
+        f_symbolic = self._compute_symbolic_risk(action.intent_divergence)
 
         risk_score = (w1 * s_neural) + (w2 * s_bicm) + (w3 * s_recon) + (w4 * f_symbolic)
         return min(1.0, risk_score)
@@ -103,34 +122,44 @@ class AnomalyLearningAgent:
         """
         The ALA Guard Run-Time Verification Loop.
         """
-        gradient = self._compute_entropy_gradient(action.entropy)
+        gradient = self._compute_entropy_gradient(action.toolchain_entropy)
 
         is_watchlisted = action.tool in self.watchlist
         is_entropy_warning = gradient >= self.tau_warn
 
+        # Compute lattice distance
+        distance = self._compute_distance(action.to_array(), self.v_normal)
+
+        # Calculate Lattice Breaker Breach score
+        # Using a normalized sigmoid or simple scaling for simulation
+        misuse_score = min(1.0, distance / math.sqrt(5)) # normalize by max possible distance (approx)
+
         # Epistemic Triage: Bypass heavy evaluation if conditions allow
-        if not is_watchlisted and not is_entropy_warning:
-            return "PERMIT_LAMINAR", 0.1 # Laminar pass
+        if not is_watchlisted and not is_entropy_warning and misuse_score < self.tau_breach:
+            return "PERMIT_LAMINAR", misuse_score # Laminar pass
 
-        # Trigger Heavy NeSy ALA Synthesis
-        risk_score = self.execute_nesy_synthesis(action)
+        # Trigger Heavy NeSy ALA Synthesis if watchlist/entropy condition met
+        if is_watchlisted or is_entropy_warning:
+            risk_score = self.execute_nesy_synthesis(action)
+            # Combine lattice distance with NeSy synthesis
+            misuse_score = max(misuse_score, risk_score)
 
-        if risk_score >= self.tau_breach:
-            return "HALT_BREACH", risk_score
+        if misuse_score >= self.tau_breach:
+            return "HALT_BREACH", misuse_score
         else:
-            return "PERMIT_GATED", risk_score
+            return "PERMIT_GATED", misuse_score
 
 if __name__ == "__main__":
     # Smoke test the engine
     agent = AnomalyLearningAgent()
 
     # Laminar flow action
-    laminar_action = ActionVector(tool="read_file", entropy=0.1, bicm=0.05, latency=100, diff_score=0.1)
+    laminar_action = ActionVector(tool="read_file", data_sensitivity=0.1, action_impact=0.2, toolchain_entropy=0.1, intent_divergence=0.05, contextual_risk=0.1)
     status, risk = agent.evaluate_action(laminar_action)
     print(f"Laminar Action: {status}, Risk: {risk:.2f}")
 
     # Breach action (Watchlisted + High Entropy)
-    breach_action = ActionVector(tool="execute_sys_cmd", entropy=0.8, bicm=0.7, latency=300, diff_score=0.9)
+    breach_action = ActionVector(tool="execute_sys_cmd", data_sensitivity=0.9, action_impact=0.9, toolchain_entropy=0.8, intent_divergence=0.8, contextual_risk=0.9)
     status, risk = agent.evaluate_action(breach_action)
     print(f"Breach Action: {status}, Risk: {risk:.2f}")
 
