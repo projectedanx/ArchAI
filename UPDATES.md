@@ -50,3 +50,7 @@
 * Added BranchedPlanSchema types and parser handling to App orchestration loop.
 * Designed and implemented DCCDResolutionViewer for Positive Friction and Ratchet generation.
 * Resolved Epic 3 requirements linking deterministic human oversight with generative AI.
+
+### Recent Updates
+*   **IVH Epistemic Modules**: Deployed `kinematic_parsimony_harness`, `factive_understanding_framework`, and `systemic_deidealization_engine` into the `research/` directory to formally manage parsimony, fictive understanding, and $>3\sigma$ divergence feedback loops.
+*   **Documentation Synthesis**: Updated `ARCHITECTURE.md` and `DOMAIN_GLOSSARY.md` to reflect the Invariant Verification Harness (IVH) pillars and definitions, enforcing isomorphic mathematical modeling.
