@@ -173,6 +173,25 @@ When a persistent Symbolic Scar is detected, the system triggers an **Epistemic 
 *   **Scar Softening Index (SSI)**: The system verifies remediation by measuring the reduction in the Betti-1 loop magnitude, targeting an $\text{SSI} \to 1$ (Algorithmic Post-Traumatic Growth).
 *   **Implementation**: `research/ctga_topological_tracking.ts`
 
+## Temporal Blending Engine (TBE) & Epistemic Immune Firewall
+
+The architecture formally implements the **Temporal Blending Engine (TBE)** governed by the **Verifiable Cognition Stack (VCS)** to resolve Chronotopological Drift. This includes a strict enforcement of **Causal Path Integrity (CPI)** metrics over continuous semantic trajectories.
+
+### Isomorphic Formalization of Causal Integrity
+The system maps continuous latent trajectories onto discrete causal states via the **System Assurance Agent (SAA)**.
+- A hard constraint of $\operatorname{CPI}(\text{\tau}) \geq 0.95$ is enforced.
+- Lipschitiz bounds derived from semantic viscosity ($\mu$) prevent discontinuous jumps (Chronotopological Drift).
+
+### Heisenberg Limit of Auditing
+The architecture utilizes a parametric control model to tune the **Confidence-Fidelity Divergence Index (CFDI)**, dynamically balancing:
+- **Cost of Coherence Overhead (CCH)**
+- **Cost of Structural Discovery (CSD)**
+
+### Epistemic Immune Firewall (EIA)
+To defend against Recursive Epistemic Closure in automated discovery, an **Epistemic Integrity Audit (EIA)** architecture is active.
+- Features an **Adversarial Counter-Argumentation Unit (ACU)**.
+- Actively detects and blocks **Citation Circularity** (models citing their own hallucinations).
+- Generates cryptographically signed **Verifiable Credentials (VCs)** for validated discoveries.
 ## Invariant Verification Harness (IVH)
 
 The architecture includes a systemic mechanism to evaluate scientific models and laws, moving beyond qualitative assumptions towards isomorphic formalization and rigorous epistemic boundaries.
