@@ -143,3 +143,11 @@ The actuation mechanism for the VCP. Corrective soft-token latent embeddings are
 | **Speculative Abstract Interpretation Engine (SAIE)** | An engine that runs abstract interpretation sweeps over generated code to formally verify compliance with global safety properties. | |
 | **Justified Uncertainty Report (JUR)** | A cryptographically bound JSON-LD schema exported upon tripping Epistemic Escrow. | Forces human intervention during cognitive load spikes. |
 | **Mutation Recoverability Score (MRS)** | Metric mathematically quantifying a system's "post-traumatic growth" resilience after F-IPI cycles against Chaos Engineering pathogens. | Target is MRS $\ge 0.80$. |
+
+### IVH & Epistemic Verification Terms
+
+*   **Scientific Law**: A descriptive generalization or mathematical pattern derived from observation, valid within specific constraints and boundaries, but silent on causal mechanisms.
+*   **Scientific Theory**: A comprehensive, broad-scope explanation that provides the underlying causal mechanisms for descriptive Scientific Laws.
+*   **Fictive Principles**: Idealized assumptions (e.g., zero molecular volume, frictionless planes) deliberately introduced to make high-dimensional physical systems computationally tractable, contributing to non-factive understanding despite strict falsity at fundamental scales.
+*   **Modus Tollens Falsification**: The logical derivation process by which an extreme boundary condition or constraint structurally breaks a model, forcing an abductive transition to a superior explanatory paradigm.
+*   **Epicyclic Over-fitting**: The addition of free parameters to a flawed coordinate system in order to save the model, explicitly penalized by Bayesian Information Criteria (BIC).
