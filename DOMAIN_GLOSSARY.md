@@ -88,6 +88,11 @@
 | **SDC** | Semantic Drift Coefficient. The instantaneous rate of semantic change representing latent drift. | Trigger condition $\xi \ge 0.30$ activates the heavy diagnostic suite. |
 | **ALSH** | Affective Latent Space Homeostasis. The critically damped state where the latent trajectory smoothly deforms around high-curvature topological obstacles without losing semantic velocity. | Maintained by dynamically calibrating the coupling coefficient $\beta$. |
 | **ESP** | Epistemic State Proof. A cryptographically secure, verifiable trace proving with zero-knowledge certainty that the alignment harness successfully executed its self-correction protocol. | Generated post-resolution of covert reasoning failures. |
+| **TBE** | Temporal Blending Engine. Resolves Chronotopological Drift when fusing temporally divergent conceptual spaces under VCS governance. | Enforces Causal Path Integrity over trajectories. |
+| **CPI** | Causal Path Integrity. Metric quantifying the degree of logical adherence to the laws of cause-and-effect over a discrete trace of states. | Hard constraint requires CPI >= 0.95. |
+| **CCH** | Cost of Coherence Overhead. Resources expended to maintain semantic rigor and verify constraints (Verification Depth x Tokens). | Balanced against CSD via the Heisenberg Audit model. |
+| **CSD** | Cost of Structural Discovery. Computational budget allocated to explore low-probability regions of the latent space (Temperature x Variance). | Opposes CCH on the optimality frontier. |
+| **EIA** | Epistemic Integrity Audit. Firewall safeguarding against Recursive Epistemic Closure and Citation Circularity in automated discovery. | Generates Verifiable Credentials. |
 
 ### JIT Orchestrator & Verifiable Cognition Stack (VCS)
 
