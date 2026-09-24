@@ -58,3 +58,7 @@ The following components currently use mock data and *should* be connected to re
 ### Infrastructure State
 *   **Automated Zotero Ingestion Loop**: `scripts/zotero_ingestion_loop.py` actively monitors and stubs the neuro-symbolic extraction of attached PDFs.
 *   **Git-Anchored Context Hashing**: `.git/hooks/pre-commit` enforces SHA-256 state matching between raw files and the manifest.
+
+### 2024-09-24: Invariant Verification Harness (IVH) Implementation
+*   **Status**: INTEGRATED
+*   **Description**: Implemented the Four Pillars of the IVH to programmatically mine, formalize, and stress-test candidate scientific laws. Added TDD research modules for Kinematic Parsimony (BIC vs. Epicycles), Factive Understanding (Fictive Principles), and Systemic De-Idealization (DAG limit bounds).

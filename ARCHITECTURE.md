@@ -172,3 +172,20 @@ When a persistent Symbolic Scar is detected, the system triggers an **Epistemic 
 *   **Paraconsistent Logic Intervention**: The RTA processes the circular trap using the Logic of Formal Inconsistency (LFI), formally declaring the contradiction ($\neg \circ P$) without causing a systemic crash.
 *   **Scar Softening Index (SSI)**: The system verifies remediation by measuring the reduction in the Betti-1 loop magnitude, targeting an $\text{SSI} \to 1$ (Algorithmic Post-Traumatic Growth).
 *   **Implementation**: `research/ctga_topological_tracking.ts`
+
+## Invariant Verification Harness (IVH)
+
+The architecture includes a systemic mechanism to evaluate scientific models and laws, moving beyond qualitative assumptions towards isomorphic formalization and rigorous epistemic boundaries.
+
+### The Four Pillars of the IVH
+
+1.  **Automated Discovery and Anomaly Mining:** Ingests raw telemetry and screens for statistical patterns violating baseline predictions ($>3\sigma$). Constants are treated as hard boundaries; empirical fit-coefficients are soft targets.
+2.  **Isomorphic Formalization:** Translates qualitative regularities into strongly-typed mathematical schemas (coordinate-free tensors, closed-form differential equations). Vague generalizations are rejected.
+3.  **Parametric Trade-off Modeling:** Employs Bayesian Model Selection to balance descriptive simplicity (parameter count) against empirical accuracy, using Occam's Razor to penalize epicyclic over-fitting.
+4.  **Continuous Falsification (Edge-Case Stress Testing):** Evaluates compiled laws as tentative hypotheses at extreme limits (e.g., $T \to 0K$, $v \to c$). Triggers automated "Model Breaking" via Modus Tollens under structural breakdown.
+
+### IVH Structural Integration
+
+*   `KinematicParsimonyHarness` (`research/kinematic_parsimony_harness.ts`): Reconstructs Ptolemaic over-fitting versus Keplerian parsimony, utilizing the Bayesian Information Criterion (BIC) and Galilean Model Breaking constraints.
+*   `FactiveUnderstandingFramework` (`research/factive_understanding_framework.ts`): Differentiates propositional knowledge (factive) from explanatory understanding (non-factive) using an ontology of "Fictive Principles" and a Grasping Metric.
+*   `SystemicDeIdealizationEngine` (`research/systemic_deidealization_engine.ts`): Represents models as DAGs, evaluating extreme limits via a Boundary Auditor, and triggers automated De-Idealization (re-injecting omitted variables) when prediction error exceeds $3\sigma$.
