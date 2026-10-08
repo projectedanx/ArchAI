@@ -2,7 +2,7 @@
 /**
  * Defines the allowed roles for agents within the system.
  */
-export type AgentRole = 'Planner' | 'Security' | 'Performance' | 'Style' | 'Sovereign' | 'Cartographer' | 'ProjectManager' | 'DevRel';
+export type AgentRole = 'Planner' | 'Security' | 'Performance' | 'Style' | 'Sovereign' | 'Cartographer' | 'ProjectManager' | 'DevRel' | 'Linguist' | 'Crone';
 
 /**
  * Represents a specific persona profile an agent can adopt.
