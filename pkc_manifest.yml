@@ -154,3 +154,151 @@ validation_gates:
   post_compile_checks:
   - Assert Merkle-root parity between the SQLite DB state and the Git HEAD commit.
   - Ensure the overall corpus Semantic Drift Score (SDS) has not increased by >0.02.
+
+  - node_id: "TDA-L0-TELEOLOGY"
+    concept: "Objective and Mythopoeic Alignment"
+    betti_number: 0
+    epistemic_weight: 1.000
+    category: "L0"
+    edges:
+      - target: "TDA-L0.5-EXISTENTIAL-HYGIENE"
+        relation: "grounding"
+        cfdi_tolerance: 0.20
+
+  - node_id: "TDA-L0.5-EXISTENTIAL-HYGIENE"
+    concept: "Meaning crisis prevention and systemic stability"
+    betti_number: 1
+    epistemic_weight: 0.950
+    category: "L0.5"
+
+  - node_id: "TDA-L1-FOUNDATIONS"
+    concept: "Cognitive Physics & Rheology"
+    betti_number: 0
+    epistemic_weight: 1.000
+    category: "L1"
+
+  - node_id: "TDA-L1.5-LATENT-PHYSICS"
+    concept: "Geometry of Thought & TDA"
+    betti_number: 1
+    epistemic_weight: 0.900
+    category: "L1.5"
+
+  - node_id: "TDA-L2-LANGUAGE-CONTROL"
+    concept: "Syntax Steering & PDL v1.0"
+    betti_number: 0
+    epistemic_weight: 0.980
+    category: "L2"
+
+  - node_id: "TDA-L2.5-SEMIOTIC-UMWELT"
+    concept: "Sensory translation to symbolic forms"
+    betti_number: 0
+    epistemic_weight: 0.900
+    category: "L2.5"
+
+  - node_id: "TDA-L2.9-ANIONIC-ARCHITECTURE"
+    concept: "Negative Space Topology & Omission Semantics"
+    betti_number: 1
+    epistemic_weight: 0.880
+    category: "L2.9"
+
+  - node_id: "TDA-L3-SOFTWARE-STACK"
+    concept: "Context Broker (CxB), MCP & State"
+    betti_number: 0
+    epistemic_weight: 1.000
+    category: "L3"
+
+  - node_id: "TDA-L3.5-CONTAINMENT-KERNEL"
+    concept: "Trusted Computing Base & Entropy Budgets"
+    betti_number: 0
+    epistemic_weight: 0.950
+    category: "L3.5"
+
+  - node_id: "TDA-L4-APP-SCHEMA"
+    concept: "Identity definitions & Refusal Mechanisms"
+    betti_number: 0
+    epistemic_weight: 0.900
+    category: "L4"
+
+  - node_id: "TDA-L4.2-PSYCHODYNAMICS"
+    concept: "Shadow integration & therapeutic forgetting"
+    betti_number: 1
+    epistemic_weight: 0.850
+    category: "L4.2"
+
+  - node_id: "TDA-L4.5-WORKFLOW-ENGINE"
+    concept: "Process Topology & Cognitive Algorithms"
+    betti_number: 0
+    epistemic_weight: 0.950
+    category: "L4.5"
+
+  - node_id: "TDA-L5-CO-MIND-TRIAD"
+    concept: "Execution Adversarial Team: Planner, Linguist, Crone"
+    betti_number: 0
+    epistemic_weight: 0.980
+    category: "L5"
+
+  - node_id: "TDA-L5.5-CHRONOSEMANTIC-TOPOLOGY"
+    concept: "Drift Hysteresis & Narrative Labyrinths"
+    betti_number: 1
+    epistemic_weight: 0.880
+    category: "L5.5"
+
+  - node_id: "TDA-L6-GOVERNANCE"
+    concept: "Epistemic Economics & Culture"
+    betti_number: 0
+    epistemic_weight: 0.950
+    category: "L6"
+
+  - node_id: "TDA-L6.5-AESTHETIC-PHYSICS"
+    concept: "Aesthetic appeal, elegance & dimensional reduction"
+    betti_number: 0
+    epistemic_weight: 0.850
+    category: "L6.5"
+
+  - node_id: "TDA-L7-ORCHESTRATION"
+    concept: "Swarm Dynamics via Sovereign Nexus"
+    betti_number: 0
+    epistemic_weight: 1.000
+    category: "L7"
+
+  - node_id: "TDA-L7.5-DIALECTICAL-RESONANCE"
+    concept: "Friction Engine & Cognitive Parallax"
+    betti_number: 1
+    epistemic_weight: 0.900
+    category: "L7.5"
+
+  - node_id: "TDA-L8-INTEGRITY"
+    concept: "Immunity, Symbolic Scars, FIPI"
+    betti_number: 0
+    epistemic_weight: 1.000
+    category: "L8"
+
+  - node_id: "TDA-L8.5-CONDITIONING"
+    concept: "Germane Load & Skill Maintenance"
+    betti_number: 0
+    epistemic_weight: 0.850
+    category: "L8.5"
+
+  - node_id: "TDA-L9-SOVEREIGNTY-INTERFACE"
+    concept: "Dynamic Consent & Power Topography"
+    betti_number: 0
+    epistemic_weight: 0.900
+    category: "L9"
+
+  - node_id: "TDA-L9.5-ECONOMIC-TOPOLOGY"
+    concept: "Value Flow Geometry & Debt Networks"
+    betti_number: 0
+    epistemic_weight: 0.900
+    category: "L9.5"
+
+  - node_id: "TDA-L10-PACKAGING"
+    concept: "Reproducible publishing & Provenance-preserving replication"
+    betti_number: 0
+    epistemic_weight: 0.980
+    category: "L10"
+
+  - node_id: "TDA-L11-AUTOPOIETIC-EVOLUTION"
+    concept: "Meta-Reflexivity & Progressive Facet Development"
+    betti_number: 0
+    epistemic_weight: 0.920
+    category: "L11"
